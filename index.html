@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <style>
         :root {
             --deep-navy: #0a0f1d;
@@ -529,12 +528,24 @@
             animation-delay: 4s;
         }
         
-        /* Tally form iframe styling */
-        .tally-form {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 12px;
+        /* Form success message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .form-success.visible {
+            display: block;
+        }
+        
+        /* Form container */
+        .form-container {
+            transition: all 0.3s ease;
+        }
+        
+        .form-container.hidden {
+            display: none;
         }
     </style>
 </head>
@@ -612,19 +623,18 @@
                         <a href="#contact" class="secondary-btn">
                             <i class="fas fa-paper-plane mr-2"></i> Contact Me
                         </a>
-                        <a href="resume.pdf" class="premium-btn" download>
+                        <a href="assets/riekgatluakcvresume.pdf" class="premium-btn" download>
                             <i class="fas fa-download mr-2"></i> Download Resume
                         </a>
                     </div>
                 </div>
                 
-              <div class="profile-img-container md:w-1/2 flex justify-center fade-in" style="transition-delay: 0.2s;">
-    <div class="relative">
-        <div class="absolute -inset-4 bg-gradient-to-r from-accent-gold to-accent-gold-dark rounded-full opacity-20 blur-lg floating"></div>
-        <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="profile-img rounded-full relative z-10">
-    </div>
- </div>
+                <div class="profile-img-container md:w-1/2 flex justify-center fade-in" style="transition-delay: 0.2s;">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-accent-gold to-accent-gold-dark rounded-full opacity-20 blur-lg floating"></div>
+                        <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="profile-img rounded-full relative z-10">
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -718,7 +728,7 @@
                                 <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
                                     <h3 class="text-xl font-bold">Founder & Lead Developer</h3>
                                     <p class="gold-text">CoreCompute</p>
-                                    <p class="text-sm text-silver">2022 - Present</p>
+                                    <p class="text-sm text-silver">2023 - Present</p>
                                 </div>
                                 <div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-accent-gold transform md:-translate-x-1/2"></div>
                                 <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
@@ -769,7 +779,7 @@
                                 <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0 order-1 md:order-2">
                                     <h3 class="text-xl font-bold">Founder & Frontend Developer</h3>
                                     <p class="gold-text">Blocentra AI</p>
-                                    <p class="text-sm text-silver">2021 - 2022</p>
+                                    <p class="text-sm text-silver">2024 - 2025</p>
                                 </div>
                             </div>
                         </div>
@@ -972,66 +982,39 @@
             <p class="text-center text-silver max-w-2xl mx-auto mb-16 mt-6">I'm available for frontend developer opportunities — remote or on-site in Juba, South Sudan.</p>
             
             <div class="flex flex-col lg:flex-row gap-12">
-    <div class="lg:w-1/2 fade-in">
-        <form 
-            class="premium-card p-8"
-            action="https://tally.so/r/nPoRAB" 
-            method="POST" 
-            target="tallyFrame"
-            onsubmit="showThankYou(event)">
-            
-            <div class="mb-6">
-                <label for="name" class="block text-silver mb-2">Name</label>
-                <input type="text" name="name" id="name" class="form-input" placeholder="Your Name" required>
-            </div>
-            
-            <div class="mb-6">
-                <label for="email" class="block text-silver mb-2">Email</label>
-                <input type="email" name="email" id="email" class="form-input" placeholder="your.email@example.com" required>
-            </div>
-            
-            <div class="mb-6">
-                <label for="message" class="block text-silver mb-2">Message</label>
-                <textarea name="message" id="message" rows="5" class="form-input" placeholder="How can I help you?" required></textarea>
-            </div>
-            
-            <button type="submit" class="premium-btn w-full">
-                Send Message
-            </button>
-        </form>
-        
-        <!-- Thank You Message -->
-        <div id="thankYouMessage" class="hidden p-8 premium-card text-center">
-            <h3 class="text-2xl font-semibold mb-4">Thank You!</h3>
-            <p>Your message has been sent successfully.</p>
-            <button onclick="backToForm()" class="mt-4 premium-btn">
-                Back
-            </button>
-        </div>
-    </div>
-</div>
-
-<script>
-function showThankYou(event) {
-    event.preventDefault();
-    document.querySelector('form').classList.add('hidden');
-    document.getElementById('thankYouMessage').classList.remove('hidden');
-
-    // Submit form to Tally
-    const form = event.target;
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        mode: 'no-cors'
-    });
-}
-
-function backToForm() {
-    document.getElementById('thankYouMessage').classList.add('hidden');
-    document.querySelector('form').classList.remove('hidden');
-}
-</script>
-
+                <div class="lg:w-1/2 fade-in">
+                    <div id="formContainer" class="form-container">
+                        <form class="premium-card p-8" id="contactForm">
+                            <div class="mb-6">
+                                <label for="name" class="block text-silver mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-silver mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-silver mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="form-input" placeholder="How can I help you?" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="premium-btn w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Thank You Message -->
+                    <div id="thankYouMessage" class="form-success premium-card p-8 text-center">
+                        <h3 class="text-2xl font-semibold mb-4">Thank You!</h3>
+                        <p class="mb-4">Your message has been sent successfully. I'll get back to you soon.</p>
+                        <button onclick="backToForm()" class="premium-btn">
+                            Send Another Message
+                        </button>
+                    </div>
+                </div>
                 
                 <div class="lg:w-1/2 fade-in" style="transition-delay: 0.2s;">
                     <div class="premium-card p-8 h-full">
@@ -1107,10 +1090,12 @@ function backToForm() {
                             </div>
                         </div>
                         
-                        <div class="mt-8 pt-6 border-t border-gold border-opacity-20 text-center">
-                            <a href="resume.pdf" class="premium-btn w-full" download>
-                                <i class="fas fa-download mr-2"></i> Download My Resume
-                            </a>
+                      <div class="mt-8 pt-6 border-t border-gold border-opacity-20 text-center">
+                          <a href="assets/riekgatluakcvresume.pdf" class="premium-btn w-full" download>
+                           <i class="fas fa-download mr-2"></i> Download My Resume
+                           </a>
+                         </div>
+  
                         </div>
                     </div>
                 </div>
@@ -1220,6 +1205,48 @@ function backToForm() {
                 header.style.background = 'rgba(18, 24, 40, 0.85)';
             }
         });
+        
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        const formContainer = document.getElementById('formContainer');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Send form data using Fetch API
+            fetch('https://getform.io/f/arogxyjb', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    formContainer.classList.add('hidden');
+                    thankYouMessage.classList.add('visible');
+                    
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    alert('There was a problem sending your message. Please try again.');
+                }
+            })
+            .catch(error => {
+                alert('There was a problem sending your message. Please try again.');
+            });
+        });
+        
+        // Back to form function
+        function backToForm() {
+            formContainer.classList.remove('hidden');
+            thankYouMessage.classList.remove('visible');
+        }
     </script>
 </body>
 </html>
