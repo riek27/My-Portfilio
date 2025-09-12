@@ -3,27 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riek Gatluak Geka | Frontend Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Riek Gatluak Geka | Full-Stack Engineer & Startup Founder</title>
+    <meta name="description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development. Building scalable, high-performance applications.">
+    <meta name="keywords" content="Full-Stack Developer, AI/ML Engineer, Blockchain Developer, Startup Founder, Frontend Engineer, Backend Developer">
+    <meta name="author" content="Riek Gatluak Geka">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://riek27.github.io/">
+    <meta property="og:title" content="Riek Gatluak Geka | Full-Stack Engineer & Startup Founder">
+    <meta property="og:description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://riek27.github.io/">
+    <meta property="twitter:title" content="Riek Gatluak Geka | Full-Stack Engineer & Startup Founder">
+    <meta property="twitter:description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                        primary: '#6366f1',
+                        'primary-dark': '#4f46e5',
+                        secondary: '#06b6d4',
+                        accent: '#10b981',
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-medium': 'float 5s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <style>
         :root {
-            --deep-navy: #0a0f1d;
-            --premium-navy: #121828;
-            --light-navy: #1a243d;
-            --accent-gold: #d6b161;
-            --accent-gold-light: #e6c87d;
-            --accent-gold-dark: #b8941f;
-            --platinum: #e5e7eb;
-            --silver: #c0c5ce;
-            --white: #ffffff;
-            --charcoal: #2d3748;
-            --success: #10b981;
-            --premium-gradient: linear-gradient(135deg, var(--accent-gold) 0%, #c89c3c 100%);
-            --card-gradient: linear-gradient(145deg, var(--premium-navy) 0%, var(--light-navy) 100%);
-            --glass-bg: rgba(18, 24, 40, 0.92);
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gradient: linear-gradient(135deg, #6366f1, #06b6d4, #10b981);
+            --color-bar-1: #8b5cf6;
+            --color-bar-2: #06b6d4;
+            --color-bar-3: #f59e0b;
         }
         
         * {
@@ -34,621 +78,72 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--silver);
-            background-color: var(--deep-navy);
+            background-color: var(--dark);
+            color: var(--light);
             overflow-x: hidden;
             scroll-behavior: smooth;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--platinum);
-            font-weight: 600;
-            letter-spacing: 0.5px;
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        .font-luxury {
-            font-family: 'Playfair Display', serif;
+        .gradient-bg {
+            background: var(--gradient);
         }
         
-        /* Premium Glass Effect */
-        .glass-effect {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(214, 177, 97, 0.15);
+        .glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
         }
         
-        /* Premium Card */
-        .premium-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(214, 177, 97, 0.18);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        .glow {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
         }
         
-        .premium-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
-            border-color: rgba(214, 177, 97, 0.3);
-        }
-        
-        /* Premium Button */
-        .premium-btn {
-            background: var(--premium-gradient);
-            color: var(--deep-navy);
-            font-weight: 600;
-            padding: 16px 36px;
-            border-radius: 50px;
-            transition: all 0.4s ease;
-            box-shadow: 0 6px 20px rgba(214, 177, 97, 0.35);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-        
-        .premium-btn:before {
-            content: '';
+        .shape {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(40px);
             z-index: -1;
         }
         
-        .premium-btn:hover:before {
-            width: 100%;
-        }
-        
-        .premium-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(214, 177, 97, 0.45);
-        }
-        
-        /* Secondary Button */
-        .secondary-btn {
-            background: transparent;
-            color: var(--accent-gold);
-            font-weight: 600;
-            padding: 16px 36px;
-            border-radius: 50px;
-            transition: all 0.4s ease;
-            border: 1px solid var(--accent-gold);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            letter-spacing: 0.5px;
-        }
-        
-        .secondary-btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: var(--accent-gold);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            z-index: -1;
-        }
-        
-        .secondary-btn:hover:before {
-            width: 100%;
-        }
-        
-        .secondary-btn:hover {
-            color: var(--deep-navy);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(214, 177, 97, 0.25);
-        }
-        
-        /* Navigation */
-        .nav-link {
-            position: relative;
-            color: var(--platinum);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background: var(--premium-gradient);
-            transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .nav-link:hover {
-            color: var(--accent-gold);
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-bg {
-            position: absolute;
+        #particle-canvas {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--premium-navy) 100%);
             z-index: -2;
         }
         
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d6b161' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            z-index: -1;
-        }
-        
-        /* Profile Image */
-        .profile-img {
-            width: 320px;
-            height: 320px;
-            object-fit: cover;
-            border: 4px solid var(--accent-gold);
-            box-shadow: 0 0 60px rgba(214, 177, 97, 0.4);
-            transition: all 0.6s ease;
-        }
-        
-        .profile-img-container:hover .profile-img {
-            box-shadow: 0 0 80px rgba(214, 177, 97, 0.6);
-            transform: scale(1.03);
-        }
-        
-        /* Section Titles */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 4rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: var(--premium-gradient);
-            bottom: -18px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        /* Skills Badges */
-        .skill-badge {
-            display: inline-block;
-            padding: 10px 24px;
-            background: rgba(214, 177, 97, 0.12);
-            color: var(--accent-gold-light);
-            border: 1px solid rgba(214, 177, 97, 0.25);
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 500;
+        .project-card {
             transition: all 0.3s ease;
-            margin: 0.4rem;
-            letter-spacing: 0.5px;
-        }
-        
-        .skill-badge:hover {
-            background: rgba(214, 177, 97, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
-        }
-        
-        /* Social Icons */
-        .social-icon {
-            width: 56px;
-            height: 56px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(214, 177, 97, 0.12);
-            color: var(--accent-gold);
-            border-radius: 50%;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(214, 177, 97, 0.22);
-        }
-        
-        .social-icon:hover {
-            background: var(--accent-gold);
-            color: var(--deep-navy);
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(214, 177, 97, 0.35);
-        }
-        
-        /* Form Input */
-        .form-input {
-            width: 100%;
-            padding: 16px 24px;
-            background: rgba(26, 36, 61, 0.6);
-            border: 1px solid rgba(214, 177, 97, 0.25);
-            border-radius: 12px;
-            color: var(--platinum);
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 0 4px rgba(214, 177, 97, 0.15);
-            background: rgba(26, 36, 61, 0.8);
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            height: 100vh;
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            z-index: 90;
-            padding: 120px 40px 40px;
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .mobile-menu.open {
-            right: 0;
-        }
-        
-        .mobile-nav-link {
-            display: block;
-            padding: 18px 0;
-            color: var(--platinum);
-            font-size: 1.3rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(214, 177, 97, 0.15);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-        
-        .mobile-nav-link:hover {
-            color: var(--accent-gold);
-            padding-left: 12px;
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        
-        /* Floating animation */
-        @keyframes float {
-            0% { transform: translate(0, 0px); }
-            50% { transform: translate(0, 15px); }
-            100% { transform: translate(0, -0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Enhanced floating for projects */
-        @keyframes enhanced-float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        
-        .enhanced-float {
-            animation: enhanced-float 8s ease-in-out infinite;
-            transition: all 0.5s ease;
-        }
-        
-        .enhanced-float:hover {
-            animation: enhanced-float 3s ease-in-out infinite;
-        }
-        
-        /* Project image hover effect */
-        .project-img {
-            height: 240px;
-            width: 100%;
-            object-fit: cover;
-            transition: all 0.6s ease;
-        }
-        
-        .project-card:hover .project-img {
-            transform: scale(1.07);
-        }
-        
-        /* Success Modal */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 15, 29, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-        
-        .modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            background: var(--card-gradient);
-            border: 1px solid rgba(214, 177, 97, 0.3);
-            border-radius: 20px;
-            padding: 3rem;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            transform: translateY(50px);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-        }
-        
-        .modal.active .modal-content {
-            transform: translateY(0);
-        }
-        
-        /* Loading Spinner */
-        .spinner {
-            width: 40px;
-            height: 40px;
-            margin: 0 auto 20px;
-            border: 4px solid rgba(214, 177, 97, 0.3);
-            border-left: 4px solid var(--accent-gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            display: none;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* 3D Canvas */
-        #three-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        /* Particle container */
-        .particles-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(214, 177, 97, 0.15);
-            animation: float-particle 15s infinite linear;
-        }
-        
-        @keyframes float-particle {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        /* 3D Card Effect */
-        .card-3d {
             transform-style: preserve-3d;
-            transition: transform 0.5s ease;
         }
         
-        .card-3d:hover {
-            transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
         }
         
-        /* Glow effects */
-        .glow {
-            box-shadow: 0 0 20px rgba(214, 177, 97, 0.3);
-            transition: box-shadow 0.5s ease;
+        .skill-bar {
+            transition: width 2s ease;
         }
         
-        .glow:hover {
-            box-shadow: 0 0 40px rgba(214, 177, 97, 0.6);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .profile-img {
-                width: 280px;
-                height: 280px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .premium-btn, .secondary-btn {
-                padding: 14px 28px;
-            }
-            
-            .profile-img {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero-content h2 {
-                font-size: 1.4rem;
-            }
-            
-            .modal-content {
-                padding: 2rem;
-            }
-            
-            .card-3d:hover {
-                transform: none;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .premium-btn, .secondary-btn {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-            }
-            
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.4rem;
-            }
-            
-            .hero-content h2 {
-                font-size: 1.2rem;
-            }
-        }
-        
-        /* Custom utilities */
-        .text-gradient {
-            background: var(--premium-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .gold-text {
-            color: var(--accent-gold);
-        }
-        
-        .bg-premium {
-            background: var(--premium-navy);
-        }
-        
-        .border-gold {
-            border-color: var(--accent-gold);
-        }
-        
-        /* Section spacing */
-        .section-spacing {
-            padding: 6rem 1rem;
-        }
-        
-        /* Container adjustment */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        /* Backdrop for mobile menu */
-        .menu-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 15, 29, 0.85);
-            backdrop-filter: blur(5px);
-            z-index: 80;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-        
-        .menu-backdrop.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Stats counter */
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--premium-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Typing animation */
         .typewriter {
             overflow: hidden;
-            border-right: 0.15em solid var(--accent-gold);
+            border-right: .15em solid var(--primary);
             white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
         
         @keyframes typing {
@@ -658,904 +153,930 @@
         
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: var(--accent-gold) }
+            50% { border-color: var(--primary) }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #fff;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .nav-scroll {
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+
+        /* Custom Color Bar Styles */
+        .color-bar {
+            position: relative;
+            height: 8px;
+            width: 100%;
+            display: flex;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .color-segment {
+            flex: 1;
+            height: 100%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .color-segment:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .color-segment::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .color-segment:hover::after {
+            opacity: 1;
+        }
+        
+        .color-picker-container {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 10px;
+            border-radius: 0 0 8px 8px;
+            z-index: 1001;
+            display: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .color-picker {
+            width: 100%;
+            height: 30px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        
+        .info-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            cursor: help;
+            transition: all 0.3s ease;
+        }
+        
+        .info-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .tooltip {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .info-icon:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
-<body class="relative">
-    <!-- 3D Background Canvas -->
-    <canvas id="three-canvas"></canvas>
-    
-    <!-- Particle Background -->
-    <div class="particles-container" id="particles"></div>
-    
-    <!-- Menu Backdrop -->
-    <div id="menuBackdrop" class="menu-backdrop"></div>
-    
-    <!-- Success Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <div class="text-6xl gold-text mb-5">
-                <i class="fas fa-check-circle"></i>
+<body class="antialiased">
+    <!-- Custom Color Bar -->
+    <div class="color-bar">
+        <div class="color-segment" id="color-segment-1" style="background-color: var(--color-bar-1);">
+            <div class="color-picker-container" id="color-picker-1">
+                <input type="color" class="color-picker" value="#8b5cf6" data-segment="1">
             </div>
-            <h3 class="text-2xl font-bold mb-4">Message Sent Successfully!</h3>
-            <p class="text-silver mb-6">Thank you for reaching out. I'll get back to you as soon as possible.</p>
-            <button id="modalClose" class="premium-btn">
-                <i class="fas fa-thumbs-up mr-2"></i> Got It
-            </button>
+        </div>
+        <div class="color-segment" id="color-segment-2" style="background-color: var(--color-bar-2);">
+            <div class="color-picker-container" id="color-picker-2">
+                <input type="color" class="color-picker" value="#06b6d4" data-segment="2">
+            </div>
+        </div>
+        <div class="color-segment" id="color-segment-3" style="background-color: var(--color-bar-3);">
+            <div class="color-picker-container" id="color-picker-3">
+                <input type="color" class="color-picker" value="#f59e0b" data-segment="3">
+            </div>
+        </div>
+        <div class="info-icon">
+            <i class="fas fa-info"></i>
+            <div class="tooltip">
+                Customize my portfolio! Click on any color segment to change it. Your preferences will be saved.
+            </div>
         </div>
     </div>
     
-    <!-- Header/Navigation -->
-    <header class="fixed w-full glass-effect z-50 py-5">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="flex justify-between items-center">
-                <div class="text-3xl font-luxury font-bold">
-                    <span class="text-gradient">Riek</span><span class="gold-text">.</span>
-                </div>
-                
-                <nav class="hidden md:flex space-x-10">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </nav>
-                
-                <div class="md:hidden">
-                    <button id="menuToggle" class="text-accent-gold focus:outline-none">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Floating Shapes -->
+    <div class="shape w-80 h-80 gradient-bg top-20 -left-40 animate-float-slow"></div>
+    <div class="shape w-96 h-96 bg-cyan-500 top-1/2 -right-48 animate-float-medium"></div>
+    <div class="shape w-64 h-64 bg-emerald-500 bottom-40 left-1/4 animate-float-fast"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 px-6 md:px-12 glass-card" style="top: 8px;">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">Riek.dev</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-indigo-300 transition-colors duration-300">About</a>
+                <a href="#projects" class="hover:text-indigo-300 transition-colors duration-300">Projects</a>
+                <a href="#skills" class="hover:text-indigo-300 transition-colors duration-300">Skills</a>
+                <a href="#contact" class="hover:text-indigo-300 transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
         </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <nav class="flex flex-col">
-            <a href="#about" class="mobile-nav-link">About</a>
-            <a href="#projects" class="mobile-nav-link">Projects</a>
-            <a href="#skills" class="mobile-nav-link">Skills</a>
-            <a href="#experience" class="mobile-nav-link">Experience</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
-        </nav>
-        
-        <div class="mt-12 pt-10 border-t border-accent-gold border-opacity-20">
-            <div class="flex space-x-5 justify-center">
-                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
+        <div id="mobile-menu" class="hidden md:hidden glass-card mt-4 p-4 rounded-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#about" class="hover:text-indigo-300 transition-colors duration-300">About</a>
+                <a href="#projects" class="hover:text-indigo-300 transition-colors duration-300">Projects</a>
+                <a href="#skills" class="hover:text-indigo-300 transition-colors duration-300">Skills</a>
+                <a href="#contact" class="hover:text-indigo-300 transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16 pb-28 px-6 md:px-12" style="padding-top: 80px;">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Riek Gatluak <span class="gradient-text">Geka</span></h1>
+                <div class="typewriter text-xl md:text-2xl text-gray-300 mb-8">
+                    Frontend Engineer | Full-Stack Developer | Startup Founder | Problem Solver
+                </div>
+                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                    I build scalable, high-performance apps and infrastructure — from sleek UIs to complex distributed systems.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#projects" class="px-8 py-4 gradient-bg rounded-full font-semibold glow hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        🚀 View Projects
+                    </a>
+                    <a href="assets/riekgatluakcvresume.pdf" download class="px-8 py-4 glass-card rounded-full font-semibold hover:glow transition-all duration-300 transform hover:scale-105">
+                        📄 Download Resume
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mt-16">
+                <a href="mailto:riekgatluak25@gmail.com" class="text-2xl hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://github.com/riek27" target="_blank" class="social-icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://wa.me/211981211736" target="_blank" class="social-icon">
+                <a href="https://wa.me/211981211736" target="_blank" class="text-2xl hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between py-24">
-                <div class="hero-content md:w-1/2 mb-16 md:mb-0 animate-fade-in">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-5">Riek Gatluak Geka</h1>
-                    <h2 class="text-xl md:text-2xl gold-text mb-7 typewriter">Frontend Developer & Web3 Specialist</h2>
-                    <p class="text-lg text-silver mb-9 leading-relaxed">
-                        I craft high-performance web applications with cutting-edge technologies, specializing in React, Next.js, and Web3 integrations.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="#projects" class="premium-btn">
-                            <i class="fas fa-code mr-3"></i> View My Work
-                        </a>
-                        <a href="#contact" class="secondary-btn">
-                            <i class="fas fa-paper-plane mr-3"></i> Contact Me
-                        </a>
-                    </div>
-                    
-                    <!-- Stats Section -->
-                    <div class="grid grid-cols-3 gap-8 mt-12">
-                        <div class="text-center">
-                            <div class="stat-number" id="projectCounter">15+</div>
-                            <div class="text-silver">Projects</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="stat-number" id="techCounter">20+</div>
-                            <div class="text-silver">Technologies</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="stat-number" id="xpCounter">2+</div>
-                            <div class="text-silver">Years XP</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="profile-img-container md:w-1/2 flex justify-center animate-fade-in delay-100">
-                    <div class="relative">
-                        <div class="absolute -inset-5 bg-gradient-to-r from-accent-gold to-accent-gold-dark rounded-full opacity-20 blur-xl floating"></div>
-                        <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="profile-img rounded-full relative z-10 glow">
-                        <!-- 3D floating elements around profile -->
-                        <div class="absolute -top-5 -left-5 w-20 h-20 rounded-full bg-accent-gold opacity-10 enhanced-float" style="animation-delay: 0.5s;"></div>
-                        <div class="absolute -bottom-5 -right-5 w-16 h-16 rounded-lg bg-accent-gold opacity-10 enhanced-float" style="animation-delay: 1s;"></div>
-                        <div class="absolute top-1/2 -right-10 w-12 h-12 rounded-lg bg-accent-gold opacity-10 enhanced-float" style="animation-delay: 1.5s;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-            <a href="#about" class="text-accent-gold animate-bounce inline-flex items-center">
-                <i class="fas fa-chevron-down text-2xl"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-spacing bg-premium-navy">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-3xl md:text-4xl text-center section-title animate-fade-in">About Me</h2>
-            
-            <div class="flex flex-col lg:flex-row items-center gap-14 mt-12">
-                <div class="lg:w-1/2 animate-fade-in delay-100">
-                    <div class="premium-card p-8 card-3d">
-                        <p class="mb-7 text-lg leading-relaxed">
-                            I'm a passionate frontend developer with expertise in creating modern, responsive web applications. 
-                            My journey in tech started early, and I've since founded two startups: CoreCompute and Blocentra, 
-                            where I've honed my skills in both technical development and business strategy.
-                        </p>
-                        <p class="mb-7 text-lg leading-relaxed">
-                            My expertise lies in React and Next.js, with a growing interest in Web3 technologies and AI infrastructure. 
-                            I thrive on solving complex problems and building user-centric solutions that deliver real value.
-                        </p>
-                        <p class="text-lg leading-relaxed">
-                            I'm currently seeking frontend developer roles where I can contribute to innovative projects, 
-                            collaborate with talented teams, and continue growing as a developer. My entrepreneurial experience 
-                            gives me a unique perspective on product development and user experience.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="lg:w-1/2 animate-fade-in delay-200">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.2s;">
-                            <div class="text-5xl gold-text mb-5">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Frontend Development</h3>
-                            <p class="text-silver">Crafting beautiful, responsive interfaces with modern frameworks</p>
-                        </div>
-                        
-                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.4s;">
-                            <div class="text-5xl gold-text mb-5">
-                                <i class="fas fa-cube"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Web3 Integration</h3>
-                            <p class="text-silver">Building decentralized applications with blockchain technology</p>
-                        </div>
-                        
-                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.6s;">
-                            <div class="text-5xl gold-text mb-5">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Startup Experience</h3>
-                            <p class="text-silver">Founder of two tech startups with full product lifecycle experience</p>
-                        </div>
-                        
-                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.8s;">
-                            <div class="text-5xl gold-text mb-5">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">AI Enthusiast</h3>
-                            <p class="text-silver">Exploring AI infrastructure and machine learning applications</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section-spacing bg-deep-navy">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-3xl md:text-4xl text-center section-title animate-fade-in">Experience</h2>
-            
-            <div class="max-w-4xl mx-auto mt-12">
-                <div class="relative">
-                    <!-- Timeline line -->
-                    <div class="absolute left-0 md:left-1/2 top-0 h-full w-1 bg-gradient-to-b from-accent-gold to-accent-gold-dark transform md:-translate-x-1/2"></div>
-                    
-                    <!-- Timeline items -->
-                    <div class="space-y-16 relative">
-                        <!-- Item 1 -->
-                        <div class="animate-fade-in delay-100">
-                            <div class="flex flex-col md:flex-row items-center">
-                                <div class="md:w-1/2 md:pr-12 md:text-right mb-5 md:mb-0">
-                                    <h3 class="text-xl font-bold">Founder & Lead Developer</h3>
-                                    <p class="gold-text">CoreCompute</p>
-                                    <p class="text-sm text-silver mt-1">2023 - Present</p>
-                                </div>
-                                <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-accent-gold transform md:-translate-x-1/2 border-4 border-deep-navy"></div>
-                                <div class="md:w-1/2 md:pl-12 mt-5 md:mt-0">
-                                    <div class="premium-card p-7 card-3d">
-                                        <p class="mb-4">Founded a distributed computing platform that leverages underutilized computing resources for complex AI workloads.</p>
-                                        <ul class="mt-5 space-y-3">
-                                            <li class="flex items-start">
-                                                <i class="fas fa-check-circle text-success mr-3 mt-1"></i>
-                                                <span>Built the frontend with React and TailwindCSS</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <i class="fas fa-check-circle text-success mr-3 mt-1"></i>
-                                                <span>Implemented Web3 integration for decentralized computing</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <i class="fas fa-check-circle text-success mr-3 mt-1"></i>
-                                                <span>Designed and developed the user interface and experience</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Item 2 -->
-                        <div class="animate-fade-in delay-200">
-                            <div class="flex flex-col md:flex-row items-center">
-                                <div class="md:w-1/2 md:pr-12 md:text-right mb-5 md:mb-0 order-2 md:order-1">
-                                    <div class="premium-card p-7 card-3d">
-                                        <p class="mb-4">Founded a blockchain-based platform offering tools to protect and grow Bitcoin holdings.</p>
-                                        <ul class="mt-5 space-y-3">
-                                            <li class="flex items-start">
-                                                <i class="fas fa-check-circle text-success mr-3 mt-1"></i>
-                                                <span>Developed the frontend with React and Web3 libraries</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <i class="fas fa-check-circle text-success mr-3 mt-1"></i>
-                                                <span>Integrated smart contracts for blockchain functionality</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <i class="fas fa-check-circle text-success mr-3 mt-1"></i>
-                                                <span>Created responsive designs for all device types</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-accent-gold transform md:-translate-x-1/2 border-4 border-deep-navy"></div>
-                                <div class="md:w-1/2 md:pl-12 mt-5 md:mt-0 order-1 md:order-2">
-                                    <h3 class="text-xl font-bold">Founder & Frontend Developer</h3>
-                                    <p class="gold-text">Blocentra AI</p>
-                                    <p class="text-sm text-silver mt-1">2024 - 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section-spacing bg-premium-navy">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-3xl md:text-4xl text-center section-title animate-fade-in">Technical Skills</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mt-14">
-                <!-- Frontend Skills -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-100 card-3d enhanced-float" style="animation-delay: 0.1s;">
-                    <div class="text-5xl gold-text mb-7">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-7">Frontend</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="skill-badge">React</span>
-                        <span class="skill-badge">Next.js</span>
-                        <span class="skill-badge">JavaScript</span>
-                        <span class="skill-badge">TypeScript</span>
-                        <span class="skill-badge">HTML/CSS</span>
-                        <span class="skill-badge">TailwindCSS</span>
-                    </div>
-                </div>
-                
-                <!-- Backend Skills -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-200 card-3d enhanced-float" style="animation-delay: 0.3s;">
-                    <div class="text-5xl gold-text mb-7">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-7">Backend</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="skill-badge">Node.js</span>
-                        <span class="skill-badge">Express</span>
-                        <span class="skill-badge">REST APIs</span>
-                        <span class="skill-badge">MongoDB</span>
-                        <span class="skill-badge">Firebase</span>
-                    </div>
-                </div>
-                
-                <!-- Web3 Skills -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-300 card-3d enhanced-float" style="animation-delay: 0.5s;">
-                    <div class="text-5xl gold-text mb-7">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-7">Web3</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="skill-badge">Solidity</span>
-                        <span class="skill-badge">Ethers.js</span>
-                        <span class="skill-badge">Web3.js</span>
-                        <span class="skill-badge">Smart Contracts</span>
-                        <span class="skill-badge">IPFS</span>
-                    </div>
-                </div>
-                
-                <!-- Tools -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-400 card-3d enhanced-float" style="animation-delay: 0.7s;">
-                    <div class="text-5xl gold-text mb-7">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-7">Tools</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="skill-badge">Git</span>
-                        <span class="skill-badge">GitHub</span>
-                        <span class="skill-badge">Docker</span>
-                        <span class="skill-badge">Figma</span>
-                        <span class="skill-badge">VS Code</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section-spacing bg-deep-navy">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-3xl md:text-4xl text-center section-title animate-fade-in">Featured Projects</h2>
-            <p class="text-center text-silver max-w-2xl mx-auto mb-16 mt-6 text-lg">Here are some of the projects I've built to solve real-world problems and showcase my technical skills.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="premium-card overflow-hidden animate-fade-in delay-100 project-card card-3d enhanced-float" style="animation-delay: 0.2s;">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="CoreCompute" class="project-img">
-                    </div>
-                    <div class="p-7">
-                        <h3 class="text-xl font-bold mb-3">CoreCompute</h3>
-                        <p class="text-silver mb-5">A distributed computing platform that leverages underutilized computing resources for complex AI workloads.</p>
-                        <div class="flex flex-wrap gap-2 mb-7">
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">Node.js</span>
-                            <span class="skill-badge">Web3</span>
-                            <span class="skill-badge">Docker</span>
-                        </div>
-                        <div class="flex space-x-5">
-                            <a href="https://github.com/riek27" class="text-accent-gold hover:text-accent-gold-light font-medium flex items-center">
-                                <i class="fab fa-github mr-2"></i> Code
-                            </a>
-                            <a href="https://riek27.github.io/CoreCompute/" target="_blank" class="text-accent-gold hover:text-accent-gold-light font-medium flex items-center">
-                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="premium-card overflow-hidden animate-fade-in delay-200 project-card card-3d enhanced-float" style="animation-delay: 0.4s;">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Blocentra AI" class="project-img">
-                    </div>
-                    <div class="p-7">
-                        <h3 class="text-xl font-bold mb-3">Blocentra AI</h3>
-                        <p class="text-silver mb-5">A blockchain-based platform offering tools to protect and grow your Bitcoin holdings.</p>
-                        <div class="flex flex-wrap gap-2 mb-7">
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">Solidity</span>
-                            <span class="skill-badge">Ethers.js</span>
-                            <span class="skill-badge">IPFS</span>
-                        </div>
-                        <div class="flex space-x-5">
-                            <a href="https://github.com/riek27" target="_blank" class="text-accent-gold hover:text-accent-gold-light font-medium flex items-center">
-                                <i class="fab fa-github mr-2"></i> Code
-                            </a>
-                            <a href="https://riek27.github.io/blocentraAI/" target="_blank" class="text-accent-gold hover:text-accent-gold-light font-medium flex items-center">
-                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="premium-card overflow-hidden animate-fade-in delay-300 project-card card-3d enhanced-float" style="animation-delay: 0.6s;">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="AI Predictive Analytics" class="project-img">
-                    </div>
-                    <div class="p-7">
-                        <h3 class="text-xl font-bold mb-3">AI Predictive Analytics</h3>
-                        <p class="text-silver mb-5">Advanced AI platform that analyzes data to predict maintenance needs before failures happen.</p>
-                        <div class="flex flex-wrap gap-2 mb-7">
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">TensorFlow</span>
-                            <span class="skill-badge">Chart.js</span>
-                        </div>
-                        <div class="flex space-x-5">
-                            <a href="https://github.com/riek27" target="_blank" class="text-accent-gold hover:text-accent-gold-light font-medium flex items-center">
-                                <i class="fab fa-github mr-2"></i> Code
-                            </a>
-                            <a href="https://riek27.github.io/Ai-predictive/" target="_blank" class="text-accent-gold hover:text-accent-gold-light font-medium flex items-center">
-                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-16 animate-fade-in delay-400">
-                <a href="https://github.com/riek27" target="_blank" class="premium-btn">
-                    <i class="fab fa-github mr-3"></i> View More on GitHub
+                <a href="https://www.linkedin.com/in/riek-gatluak-geka" target="_blank" class="text-2xl hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/riek27" target="_blank" class="text-2xl hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-spacing bg-premium-navy">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-3xl md:text-4xl text-center section-title animate-fade-in">Let's Work Together</h2>
-            <p class="text-center text-silver max-w-2xl mx-auto mb-16 mt-6 text-lg">I'm available for frontend developer opportunities — remote or on-site in Juba, South Sudan.</p>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 md:px-12">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">About Me</h2>
             
-            <div class="flex flex-col lg:flex-row gap-14">
-                <div class="lg:w-1/2 animate-fade-in delay-100">
-                    <div class="premium-card p-8 card-3d">
-                        <form id="contactForm">
-                            <div class="mb-7">
-                                <label for="name" class="block text-silver mb-3 text-lg">Name</label>
-                                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
-                            </div>
-                            
-                            <div class="mb-7">
-                                <label for="email" class="block text-silver mb-3 text-lg">Email</label>
-                                <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
-                            </div>
-                            
-                            <div class="mb-7">
-                                <label for="message" class="block text-silver mb-3 text-lg">Message</label>
-                                <textarea id="message" name="message" rows="5" class="form-input" placeholder="How can I help you?" required></textarea>
-                            </div>
-                            
-                            <div id="spinner" class="spinner"></div>
-                            
-                            <button type="submit" id="submitBtn" class="premium-btn w-full text-lg py-5">
-                                Send Message
-                            </button>
-                        </form>
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="w-full lg:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glow animate-float-slow">
+                            <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="w-full h-full object-cover lazy-load" id="profile-img">
+                        </div>
+                        <div class="absolute -inset-4 border-4 border-transparent rounded-full gradient-bg -z-10 animate-float-medium" style="animation-delay: 1s;"></div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2 animate-fade-in delay-200">
-                    <div class="premium-card p-8 h-full card-3d">
-                        <h3 class="text-xl font-bold mb-7">Contact Information</h3>
-                        
-                        <div class="space-y-7">
-                            <div class="flex items-start">
-                                <div class="text-accent-gold text-2xl mr-5 mt-1">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-lg">Email</h4>
-                                    <a href="mailto:riekgatluak25@gmail.com" class="text-silver hover:text-accent-gold transition text-lg">riekgatluak25@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="text-accent-gold text-2xl mr-5 mt-1">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-lg">WhatsApp</h4>
-                                    <a href="https://wa.me/211981211736" target="_blank" class="text-silver hover:text-accent-gold transition text-lg">+211 981 211 736</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="text-accent-gold text-2xl mr-5 mt-1">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-lg">Location</h4>
-                                    <p class="text-silver text-lg">Juba, South Sudan</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="text-accent-gold text-2xl mr-5 mt-1">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-lg">LinkedIn</h4>
-                                    <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-silver hover:text-accent-gold transition text-lg">linkedin.com/in/riek-gatluak-geka</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="text-accent-gold text-2xl mr-5 mt-1">
-                                    <i class="fab fa-github"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-lg">GitHub</h4>
-                                    <a href="https://github.com/riek27" target="_blank" class="text-silver hover:text-accent-gold transition text-lg">github.com/riek27</a>
-                                </div>
-                            </div>
+                <div class="w-full lg:w-2/3 glass-card p-8 md:p-12 rounded-2xl">
+                    <p class="text-lg text-gray-300 mb-6">
+                        I'm a multi-disciplinary engineer with expertise spanning frontend, backend, AI/ML infrastructure, blockchain, and startup product development. 
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        As the founder of <span class="text-indigo-300 font-medium">CoreCompute</span> (decentralized AI compute platform) and <span class="text-cyan-300 font-medium">Blocentra</span> (Bitcoin infrastructure), I've led the development of cutting-edge solutions that solve real-world problems.
+                    </p>
+                    <p class="text-lg text-gray-300">
+                        My passion lies in building scalable systems that bridge the gap between complex technology and user-friendly experiences. I thrive in challenging environments where I can leverage my full-stack expertise to deliver impactful solutions.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <div class="text-3xl font-bold gradient-text">5+</div>
+                            <div class="text-sm text-gray-400">Years Experience</div>
                         </div>
-                        
-                        <div class="mt-12 pt-10 border-t border-accent-gold border-opacity-20">
-                            <h4 class="font-semibold mb-5 text-center text-lg">Follow Me</h4>
-                            <div class="flex justify-center space-x-5">
-                                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="social-icon">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/riek27" target="_blank" class="social-icon">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://wa.me/211981211736" target="_blank" class="social-icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                <a href="mailto:riekgatluak25@gmail.com" class="social-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <div class="text-3xl font-bold gradient-text">20+</div>
+                            <div class="text-sm text-gray-400">Projects</div>
                         </div>
-                        
-                        <div class="mt-10 pt-8 border-t border-accent-gold border-opacity-20 text-center">
-                            <a href="assets/riekgatluakcvresume.pdf" download class="premium-btn w-full text-lg py-5">
-                                <i class="fas fa-download mr-3"></i> Download My Resume
-                            </a>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <div class="text-3xl font-bold gradient-text">2</div>
+                            <div class="text-sm text-gray-400">Startups</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <div class="text-3xl font-bold gradient-text">4</div>
+                            <div class="text-sm text-gray-400">Domains</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="py-14 border-t border-accent-gold border-opacity-10">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-7 md:mb-0">
-                    <div class="text-3xl font-luxury font-bold mb-3">
-                        <span class="text-gradient">Riek Gatluak Geka</span>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 md:px-12 bg-slate-900/50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- CoreCompute -->
+                <div class="project-card glass-card p-6 rounded-2xl">
+                    <div class="mb-6 h-48 overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="CoreCompute" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
-                    <p class="text-silver text-lg">Frontend Developer & Web3 Specialist</p>
+                    <h3 class="text-2xl font-bold mb-2">CoreCompute</h3>
+                    <p class="text-gray-400 mb-4">Decentralized AI compute network leveraging idle GPUs to reduce AI training costs by up to 40%.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Blockchain</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Web3</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <a href="https://riek27.github.io/CoreCompute/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
+                        <a href="https://github.com/riek27/CoreCompute" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
+                    </div>
                 </div>
                 
-                <div class="flex space-x-5">
-                    <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/riek27" target="_blank" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://wa.me/211981211736" target="_blank" class="social-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+                <!-- Blocentra -->
+                <div class="project-card glass-card p-6 rounded-2xl">
+                    <div class="mb-6 h-48 overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1626624340244-54b32fcada3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Blocentra" class="w-full h-full object-cover lazy-load" loading="lazy">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Blocentra</h3>
+                    <p class="text-gray-400 mb-4">Bitcoin infrastructure platform providing blockchain tools and services for the crypto economy.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">TailwindCSS</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">Bitcoin</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">APIs</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <a href="https://riek27.github.io/blocentraAI/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
+                        <a href="https://github.com/riek27/blocentraAI" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
+                    </div>
+                </div>
+                
+                <!-- AI Predictive Maintenance -->
+                <div class="project-card glass-card p-6 rounded-2xl">
+                    <div class="mb-6 h-48 overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="AI Predictive Maintenance" class="w-full h-full object-cover lazy-load" loading="lazy">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">AI Predictive Maintenance</h3>
+                    <p class="text-gray-400 mb-4">Predictive infrastructure maintenance powered by AI, analyzing sensor data to prevent failures.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">AI/ML</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">IoT</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Data Viz</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Python</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <a href="https://riek27.github.io/Ai-predictive/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
+                        <a href="https://github.com/riek27/Ai-predictive" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
+                    </div>
                 </div>
             </div>
             
-            <div class="border-t border-accent-gold border-opacity-10 mt-10 pt-10 text-center">
-                <p class="text-silver text-lg">© 2025 Riek Gatluak Geka. All rights reserved.</p>
+            <div class="text-center mt-12">
+                <a href="https://github.com/riek27" target="_blank" class="px-8 py-3 glass-card rounded-full font-semibold inline-flex items-center hover:glow transition-all duration-300">
+                    View More on GitHub <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 md:px-12">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Technical Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Frontend -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-indigo-300">Frontend Development</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>HTML/CSS/JS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>React</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>TailwindCSS</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-300">Backend & APIs</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Node.js/Express</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>REST/GraphQL APIs</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Database Design</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-emerald-300">Infrastructure & DevOps</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>AWS Cloud</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Docker</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>CI/CD Pipelines</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Specialties -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-300">Specializations</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <i class="fas fa-brain text-3xl mb-2 text-indigo-400"></i>
+                            <div>AI/ML Infrastructure</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <i class="fas fa-link text-3xl mb-2 text-cyan-400"></i>
+                            <div>Blockchain</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <i class="fas fa-network-wired text-3xl mb-2 text-emerald-400"></i>
+                            <div>Distributed Systems</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                            <i class="fas fa-rocket text-3xl mb-2 text-purple-400"></i>
+                            <div>Startup Development</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 md:px-12 bg-slate-900/50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Open to frontend, full-stack, and infrastructure roles — ready to contribute from day one.</h3>
+                    <p class="text-gray-400 mb-8">I'm currently exploring new opportunities where I can apply my multidisciplinary expertise to build innovative solutions. Let's connect!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <a href="mailto:riekgatluak25@gmail.com" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300">riekgatluak25@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">WhatsApp</div>
+                                <a href="https://wa.me/211981211736" target="_blank" class="text-gray-400 hover:text-green-300 transition-colors duration-300">+211 981 211 736</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">LinkedIn</div>
+                                <a href="https://www.linkedin.com/in/riek-gatluak-geka" target="_blank" class="text-gray-400 hover:text-blue-300 transition-colors duration-300">linkedin.com/in/riek-gatluak-geka</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Location</div>
+                                <div class="text-gray-400">Juba, South Sudan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-4 gradient-bg rounded-lg font-semibold glow flex items-center justify-center hover:shadow-lg transition-all duration-300">
+                            Send Message
+                        </button>
+                        
+                        <div class="spinner mt-4 mx-auto"></div>
+                        
+                        <div id="form-success" class="hidden p-4 bg-emerald-900/30 text-emerald-300 rounded-lg text-center">
+                            Thank you! I will respond shortly.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center relative overflow-hidden">
+        <div class="container mx-auto">
+            <div class="text-gray-400 mb-4">© 2025 Riek Gatluak Geka. All rights reserved.</div>
+            <div class="flex justify-center space-x-6">
+                <a href="mailto:riekgatluak25@gmail.com" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/211981211736" target="_blank" class="text-gray-400 hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/riek-gatluak-geka" target="_blank" class="text-gray-400 hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/riek27" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </div>
     </footer>
-
+    
     <script>
-        // Mobile menu functionality
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuBackdrop = document.getElementById('menuBackdrop');
-        
-        function toggleMenu() {
-            menuToggle.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-            menuBackdrop.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        }
-        
-        menuToggle.addEventListener('click', toggleMenu);
-        menuBackdrop.addEventListener('click', toggleMenu);
-        
-        // Close menu when clicking on links
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+        // Wait for DOM to fully load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Custom Color Bar Functionality
+            function initColorBar() {
+                const colorSegments = document.querySelectorAll('.color-segment');
+                const colorPickers = document.querySelectorAll('.color-picker');
+                const colorPickerContainers = document.querySelectorAll('.color-picker-container');
                 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                // Load saved colors from localStorage
+                const savedColors = JSON.parse(localStorage.getItem('portfolioColors')) || {};
                 
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    if (mobileMenu.classList.contains('open')) {
-                        toggleMenu();
-                    }
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                if (savedColors.color1) {
+                    document.documentElement.style.setProperty('--color-bar-1', savedColors.color1);
+                    document.querySelector('#color-segment-1').style.backgroundColor = savedColors.color1;
+                    document.querySelector('#color-picker-1 input').value = savedColors.color1;
+                }
+                
+                if (savedColors.color2) {
+                    document.documentElement.style.setProperty('--color-bar-2', savedColors.color2);
+                    document.querySelector('#color-segment-2').style.backgroundColor = savedColors.color2;
+                    document.querySelector('#color-picker-2 input').value = savedColors.color2;
+                }
+                
+                if (savedColors.color3) {
+                    document.documentElement.style.setProperty('--color-bar-3', savedColors.color3);
+                    document.querySelector('#color-segment-3').style.backgroundColor = savedColors.color3;
+                    document.querySelector('#color-picker-3 input').value = savedColors.color3;
+                }
+                
+                // Add click event to each segment to show color picker
+                colorSegments.forEach((segment, index) => {
+                    segment.addEventListener('click', function(e) {
+                        // Hide all other pickers
+                        colorPickerContainers.forEach(container => {
+                            container.style.display = 'none';
+                        });
+                        
+                        // Show this segment's picker
+                        const pickerId = `color-picker-${index + 1}`;
+                        const pickerContainer = document.getElementById(pickerId);
+                        pickerContainer.style.display = 'block';
+                        
+                        // Position the picker container
+                        const rect = segment.getBoundingClientRect();
+                        pickerContainer.style.left = `${rect.left}px`;
+                        pickerContainer.style.width = `${rect.width}px`;
                     });
-                }
-            });
-        });
-        
-        // Form submission handling
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const spinner = document.getElementById('spinner');
-        const successModal = document.getElementById('successModal');
-        const modalClose = document.getElementById('modalClose');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show loading state
-            submitBtn.style.display = 'none';
-            spinner.style.display = 'block';
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            
-            // Send form data using Fetch API
-            fetch('https://getform.io/f/arogxyjb', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Show success modal
-                    successModal.classList.add('active');
-                    // Reset form
-                    contactForm.reset();
-                } else {
-                    alert('There was a problem sending your message. Please try again.');
-                }
-            })
-            .catch(error => {
-                alert('There was a problem sending your message. Please try again.');
-            })
-            .finally(() => {
-                // Hide loading state
-                submitBtn.style.display = 'block';
-                spinner.style.display = 'none';
-            });
-        });
-        
-        // Close modal functionality
-        modalClose.addEventListener('click', function() {
-            successModal.classList.remove('active');
-        });
-        
-        // Close modal when clicking outside
-        successModal.addEventListener('click', function(e) {
-            if (e.target === successModal) {
-                successModal.classList.remove('active');
-            }
-        });
-        
-        // Animate elements on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate-fade-in');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        // Set initial state for animated elements
-        document.querySelectorAll('.animate-fade-in').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-xl');
-                header.style.background = 'rgba(18, 24, 40, 0.96)';
-            } else {
-                header.classList.remove('shadow-xl');
-                header.style.background = 'rgba(18, 24, 40, 0.92)';
-            }
-        });
-        
-        // Initialize animations on page load
-        window.addEventListener('load', function() {
-            animateOnScroll();
-            
-            // Add a slight delay to hero animations for better effect
-            document.querySelectorAll('.hero-content > *').forEach((el, i) => {
-                el.style.animationDelay = `${i * 0.2}s`;
-            });
-            
-            // Initialize 3D background
-            initThreeJS();
-            
-            // Create floating particles
-            createParticles();
-            
-            // Animate stats counters
-            animateCounters();
-        });
-        
-        // 3D Background with Three.js
-        function initThreeJS() {
-            const canvas = document.getElementById('three-canvas');
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-            
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            
-            // Create geometric shapes for background
-            const geometry = new THREE.IcosahedronGeometry(1, 0);
-            const material = new THREE.MeshPhongMaterial({ 
-                color: 0xd6b161,
-                shininess: 100,
-                transparent: true,
-                opacity: 0.05
-            });
-            
-            // Create multiple shapes
-            const shapes = [];
-            const numShapes = 15;
-            
-            for (let i = 0; i < numShapes; i++) {
-                const shape = new THREE.Mesh(geometry, material);
-                
-                // Random position
-                shape.position.x = Math.random() * 20 - 10;
-                shape.position.y = Math.random() * 20 - 10;
-                shape.position.z = Math.random() * 10 - 20;
-                
-                // Random rotation
-                shape.rotation.x = Math.random() * Math.PI;
-                shape.rotation.y = Math.random() * Math.PI;
-                
-                // Random scale
-                const scale = Math.random() * 2 + 0.5;
-                shape.scale.set(scale, scale, scale);
-                
-                scene.add(shape);
-                shapes.push(shape);
-            }
-            
-            // Add ambient light
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-            scene.add(ambientLight);
-            
-            // Add directional light
-            const directionalLight = new THREE.DirectionalLight(0xd6b161, 0.5);
-            directionalLight.position.set(0, 1, 1);
-            scene.add(directionalLight);
-            
-            camera.position.z = 5;
-            
-            // Animation
-            function animate() {
-                requestAnimationFrame(animate);
-                
-                shapes.forEach(shape => {
-                    shape.rotation.x += 0.005;
-                    shape.rotation.y += 0.005;
-                    
-                    // Float up and down
-                    shape.position.y += Math.sin(Date.now() * 0.001 + shape.position.x) * 0.005;
                 });
                 
-                renderer.render(scene, camera);
+                // Add change event to color pickers
+                colorPickers.forEach(picker => {
+                    picker.addEventListener('input', function(e) {
+                        const segmentId = this.getAttribute('data-segment');
+                        const color = this.value;
+                        
+                        // Update the segment color
+                        document.querySelector(`#color-segment-${segmentId}`).style.backgroundColor = color;
+                        document.documentElement.style.setProperty(`--color-bar-${segmentId}`, color);
+                        
+                        // Save to localStorage
+                        const savedColors = JSON.parse(localStorage.getItem('portfolioColors')) || {};
+                        savedColors[`color${segmentId}`] = color;
+                        localStorage.setItem('portfolioColors', JSON.stringify(savedColors));
+                    });
+                });
+                
+                // Close color pickers when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.color-segment') && !e.target.closest('.color-picker-container')) {
+                        colorPickerContainers.forEach(container => {
+                            container.style.display = 'none';
+                        });
+                    }
+                });
             }
             
-            animate();
+            // Initialize color bar
+            initColorBar();
             
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
+            // Three.js Particle Background
+            function initParticles() {
+                const canvas = document.getElementById('particle-canvas');
+                if (!canvas) return;
+                
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ 
+                    canvas, 
+                    alpha: true,
+                    antialias: true 
+                });
+                
                 renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        }
-        
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
                 
-                // Random size
-                const size = Math.random() * 20 + 5;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
+                // Create particles with improved performance
+                const particlesGeometry = new THREE.BufferGeometry();
+                const particlesCount = 1200; // Reduced for better performance
                 
-                // Random position
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
+                const posArray = new Float32Array(particlesCount * 3);
+                const colorArray = new Float32Array(particlesCount * 3);
                 
-                // Random animation delay
-                particle.style.animationDelay = `${Math.random() * 15}s`;
+                for (let i = 0; i < particlesCount * 3; i++) {
+                    posArray[i] = (Math.random() - 0.5) * 10;
+                    colorArray[i] = Math.random();
+                }
                 
-                container.appendChild(particle);
+                particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+                
+                const particlesMaterial = new THREE.PointsMaterial({
+                    size: 0.05,
+                    vertexColors: true,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                
+                const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+                scene.add(particlesMesh);
+                
+                camera.position.z = 5;
+                
+                // Mouse movement with dampening for smoother effect
+                let mouseX = 0;
+                let mouseY = 0;
+                let targetX = 0;
+                let targetY = 0;
+                
+                document.addEventListener('mousemove', (event) => {
+                    targetX = (event.clientX / window.innerWidth) * 2 - 1;
+                    targetY = -(event.clientY / window.innerHeight) * 2 + 1;
+                });
+                
+                // Animation with optimized rendering
+                let frameId;
+                function animate() {
+                    frameId = requestAnimationFrame(animate);
+                    
+                    particlesMesh.rotation.x += 0.0005;
+                    particlesMesh.rotation.y += 0.0005;
+                    
+                    // Smooth mouse movement with easing
+                    mouseX += (targetX * 2 - mouseX) * 0.05;
+                    mouseY += (targetY * 2 - mouseY) * 0.05;
+                    
+                    camera.position.x = mouseX;
+                    camera.position.y = mouseY;
+                    camera.lookAt(scene.position);
+                    
+                    renderer.render(scene, camera);
+                }
+                
+                animate();
+                
+                // Handle window resize with debounce
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        camera.aspect = window.innerWidth / window.innerHeight;
+                        camera.updateProjectionMatrix();
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                    }, 250);
+                });
             }
-        }
-        
-        // Animate counters
-        function animateCounters() {
-            const projectCounter = document.getElementById('projectCounter');
-            const techCounter = document.getElementById('techCounter');
-            const xpCounter = document.getElementById('xpCounter');
             
-            animateValue(projectCounter, 0, 15, 2000);
-            animateValue(techCounter, 0, 20, 2000);
-            animateValue(xpCounter, 0, 2, 2000);
-        }
-        
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.innerHTML = Math.floor(progress * (end - start) + start) + '+';
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
+            // Initialize particles if Three.js is available
+            if (typeof THREE !== 'undefined') {
+                initParticles();
+            }
+            
+            // Mobile menu toggle
+            document.getElementById('menu-toggle')?.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+            
+            // Navbar scroll effect
+            let lastScrollY = window.scrollY;
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scroll');
+                } else {
+                    navbar.classList.remove('nav-scroll');
                 }
+                
+                lastScrollY = window.scrollY;
+            });
+            
+            // Animate on scroll with Intersection Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
             };
-            window.requestAnimationFrame(step);
-        }
-        
-        // Add 3D tilt effect to cards
-        document.querySelectorAll('.card-3d').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                if (window.innerWidth > 768) { // Only on desktop
-                    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-                    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-                    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-10px)`;
-                }
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
             });
             
-            card.addEventListener('mouseenter', () => {
-                if (window.innerWidth > 768) {
-                    card.style.transition = 'none';
-                }
+            // Skill bars animation
+            const skillBars = document.querySelectorAll('.skill-bar');
+            const skillsSection = document.getElementById('skills');
+            
+            if (skillsSection) {
+                const skillsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            skillBars.forEach(bar => {
+                                const width = bar.style.width;
+                                bar.style.width = '0';
+                                setTimeout(() => {
+                                    bar.style.width = width;
+                                }, 200);
+                            });
+                            skillsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                
+                skillsObserver.observe(skillsSection);
+            }
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contact-form');
+            const spinner = document.querySelector('.spinner');
+            const successMessage = document.getElementById('form-success');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    spinner.style.display = 'block';
+                    
+                    try {
+                        const response = await fetch('https://api.getform.io/v1/forms/arogxyjb?token=soaqOTdqKqVQqqyMZVJF4aLtu7if2GJUnXwX1lGgC73EPo3DclkrURwxBVcy', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        
+                        if (response.ok) {
+                            contactForm.reset();
+                            successMessage.classList.remove('hidden');
+                            setTimeout(() => {
+                                successMessage.classList.add('hidden');
+                            }, 5000);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                    } finally {
+                        spinner.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Lazy loading images with Intersection Observer
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for browsers without Intersection Observer
+                lazyImages.forEach(img => img.classList.add('loaded'));
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close mobile menu if open
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                });
             });
             
-            card.addEventListener('mouseleave', () => {
-                if (window.innerWidth > 768) {
-                    card.style.transition = 'transform 0.5s ease';
-                    card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-                }
-            });
+            // Preload critical images
+            function preloadImage(url) {
+                const img = new Image();
+                img.src = url;
+            }
+            
+            // Preload hero image
+            preloadImage('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
         });
     </script>
 </body>
