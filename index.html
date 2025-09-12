@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riek Gatluak Geka | Senior Frontend Developer</title>
+    <title>Riek Gatluak Geka | Frontend Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         :root {
             --deep-navy: #0a0f1d;
@@ -373,6 +374,22 @@
             animation: float 6s ease-in-out infinite;
         }
         
+        /* Enhanced floating for projects */
+        @keyframes enhanced-float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .enhanced-float {
+            animation: enhanced-float 8s ease-in-out infinite;
+            transition: all 0.5s ease;
+        }
+        
+        .enhanced-float:hover {
+            animation: enhanced-float 3s ease-in-out infinite;
+        }
+        
         /* Project image hover effect */
         .project-img {
             height: 240px;
@@ -442,6 +459,72 @@
             100% { transform: rotate(360deg); }
         }
         
+        /* 3D Canvas */
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* Particle container */
+        .particles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(214, 177, 97, 0.15);
+            animation: float-particle 15s infinite linear;
+        }
+        
+        @keyframes float-particle {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* 3D Card Effect */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
+        }
+        
+        /* Glow effects */
+        .glow {
+            box-shadow: 0 0 20px rgba(214, 177, 97, 0.3);
+            transition: box-shadow 0.5s ease;
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 40px rgba(214, 177, 97, 0.6);
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 1024px) {
             .profile-img {
@@ -470,6 +553,10 @@
             
             .modal-content {
                 padding: 2rem;
+            }
+            
+            .card-3d:hover {
+                transform: none;
             }
         }
         
@@ -545,9 +632,43 @@
             opacity: 1;
             visibility: visible;
         }
+        
+        /* Stats counter */
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--premium-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Typing animation */
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid var(--accent-gold);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-gold) }
+        }
     </style>
 </head>
 <body class="relative">
+    <!-- 3D Background Canvas -->
+    <canvas id="three-canvas"></canvas>
+    
+    <!-- Particle Background -->
+    <div class="particles-container" id="particles"></div>
+    
     <!-- Menu Backdrop -->
     <div id="menuBackdrop" class="menu-backdrop"></div>
     
@@ -626,7 +747,7 @@
             <div class="flex flex-col md:flex-row items-center justify-between py-24">
                 <div class="hero-content md:w-1/2 mb-16 md:mb-0 animate-fade-in">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-5">Riek Gatluak Geka</h1>
-                    <h2 class="text-xl md:text-2xl gold-text mb-7">Frontend Developer & Web3 Specialist</h2>
+                    <h2 class="text-xl md:text-2xl gold-text mb-7 typewriter">Frontend Developer & Web3 Specialist</h2>
                     <p class="text-lg text-silver mb-9 leading-relaxed">
                         I craft high-performance web applications with cutting-edge technologies, specializing in React, Next.js, and Web3 integrations.
                     </p>
@@ -637,16 +758,33 @@
                         <a href="#contact" class="secondary-btn">
                             <i class="fas fa-paper-plane mr-3"></i> Contact Me
                         </a>
-                        <a href="assets/riekgatluakcvresume.pdf" download class="premium-btn">
-                            <i class="fas fa-download mr-3"></i> Download Resume
-                        </a>
+                    </div>
+                    
+                    <!-- Stats Section -->
+                    <div class="grid grid-cols-3 gap-8 mt-12">
+                        <div class="text-center">
+                            <div class="stat-number" id="projectCounter">15+</div>
+                            <div class="text-silver">Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number" id="techCounter">20+</div>
+                            <div class="text-silver">Technologies</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number" id="xpCounter">2+</div>
+                            <div class="text-silver">Years XP</div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="profile-img-container md:w-1/2 flex justify-center animate-fade-in delay-100">
                     <div class="relative">
                         <div class="absolute -inset-5 bg-gradient-to-r from-accent-gold to-accent-gold-dark rounded-full opacity-20 blur-xl floating"></div>
-                        <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="profile-img rounded-full relative z-10">
+                        <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="profile-img rounded-full relative z-10 glow">
+                        <!-- 3D floating elements around profile -->
+                        <div class="absolute -top-5 -left-5 w-20 h-20 rounded-full bg-accent-gold opacity-10 enhanced-float" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute -bottom-5 -right-5 w-16 h-16 rounded-lg bg-accent-gold opacity-10 enhanced-float" style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 -right-10 w-12 h-12 rounded-lg bg-accent-gold opacity-10 enhanced-float" style="animation-delay: 1.5s;"></div>
                     </div>
                 </div>
             </div>
@@ -666,7 +804,7 @@
             
             <div class="flex flex-col lg:flex-row items-center gap-14 mt-12">
                 <div class="lg:w-1/2 animate-fade-in delay-100">
-                    <div class="premium-card p-8">
+                    <div class="premium-card p-8 card-3d">
                         <p class="mb-7 text-lg leading-relaxed">
                             I'm a passionate frontend developer with expertise in creating modern, responsive web applications. 
                             My journey in tech started early, and I've since founded two startups: CoreCompute and Blocentra, 
@@ -686,7 +824,7 @@
                 
                 <div class="lg:w-1/2 animate-fade-in delay-200">
                     <div class="grid grid-cols-2 gap-6">
-                        <div class="premium-card p-7 text-center">
+                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.2s;">
                             <div class="text-5xl gold-text mb-5">
                                 <i class="fas fa-code"></i>
                             </div>
@@ -694,7 +832,7 @@
                             <p class="text-silver">Crafting beautiful, responsive interfaces with modern frameworks</p>
                         </div>
                         
-                        <div class="premium-card p-7 text-center">
+                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.4s;">
                             <div class="text-5xl gold-text mb-5">
                                 <i class="fas fa-cube"></i>
                             </div>
@@ -702,7 +840,7 @@
                             <p class="text-silver">Building decentralized applications with blockchain technology</p>
                         </div>
                         
-                        <div class="premium-card p-7 text-center">
+                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.6s;">
                             <div class="text-5xl gold-text mb-5">
                                 <i class="fas fa-rocket"></i>
                             </div>
@@ -710,7 +848,7 @@
                             <p class="text-silver">Founder of two tech startups with full product lifecycle experience</p>
                         </div>
                         
-                        <div class="premium-card p-7 text-center">
+                        <div class="premium-card p-7 text-center card-3d enhanced-float" style="animation-delay: 0.8s;">
                             <div class="text-5xl gold-text mb-5">
                                 <i class="fas fa-brain"></i>
                             </div>
@@ -745,7 +883,7 @@
                                 </div>
                                 <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-accent-gold transform md:-translate-x-1/2 border-4 border-deep-navy"></div>
                                 <div class="md:w-1/2 md:pl-12 mt-5 md:mt-0">
-                                    <div class="premium-card p-7">
+                                    <div class="premium-card p-7 card-3d">
                                         <p class="mb-4">Founded a distributed computing platform that leverages underutilized computing resources for complex AI workloads.</p>
                                         <ul class="mt-5 space-y-3">
                                             <li class="flex items-start">
@@ -770,7 +908,7 @@
                         <div class="animate-fade-in delay-200">
                             <div class="flex flex-col md:flex-row items-center">
                                 <div class="md:w-1/2 md:pr-12 md:text-right mb-5 md:mb-0 order-2 md:order-1">
-                                    <div class="premium-card p-7">
+                                    <div class="premium-card p-7 card-3d">
                                         <p class="mb-4">Founded a blockchain-based platform offering tools to protect and grow Bitcoin holdings.</p>
                                         <ul class="mt-5 space-y-3">
                                             <li class="flex items-start">
@@ -809,7 +947,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mt-14">
                 <!-- Frontend Skills -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-100">
+                <div class="premium-card p-7 text-center animate-fade-in delay-100 card-3d enhanced-float" style="animation-delay: 0.1s;">
                     <div class="text-5xl gold-text mb-7">
                         <i class="fas fa-laptop-code"></i>
                     </div>
@@ -825,7 +963,7 @@
                 </div>
                 
                 <!-- Backend Skills -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-200">
+                <div class="premium-card p-7 text-center animate-fade-in delay-200 card-3d enhanced-float" style="animation-delay: 0.3s;">
                     <div class="text-5xl gold-text mb-7">
                         <i class="fas fa-server"></i>
                     </div>
@@ -840,7 +978,7 @@
                 </div>
                 
                 <!-- Web3 Skills -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-300">
+                <div class="premium-card p-7 text-center animate-fade-in delay-300 card-3d enhanced-float" style="animation-delay: 0.5s;">
                     <div class="text-5xl gold-text mb-7">
                         <i class="fas fa-link"></i>
                     </div>
@@ -855,7 +993,7 @@
                 </div>
                 
                 <!-- Tools -->
-                <div class="premium-card p-7 text-center animate-fade-in delay-400">
+                <div class="premium-card p-7 text-center animate-fade-in delay-400 card-3d enhanced-float" style="animation-delay: 0.7s;">
                     <div class="text-5xl gold-text mb-7">
                         <i class="fas fa-tools"></i>
                     </div>
@@ -880,7 +1018,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="premium-card overflow-hidden animate-fade-in delay-100 project-card">
+                <div class="premium-card overflow-hidden animate-fade-in delay-100 project-card card-3d enhanced-float" style="animation-delay: 0.2s;">
                     <div class="overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="CoreCompute" class="project-img">
                     </div>
@@ -905,7 +1043,7 @@
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="premium-card overflow-hidden animate-fade-in delay-200 project-card">
+                <div class="premium-card overflow-hidden animate-fade-in delay-200 project-card card-3d enhanced-float" style="animation-delay: 0.4s;">
                     <div class="overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Blocentra AI" class="project-img">
                     </div>
@@ -930,7 +1068,7 @@
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="premium-card overflow-hidden animate-fade-in delay-300 project-card">
+                <div class="premium-card overflow-hidden animate-fade-in delay-300 project-card card-3d enhanced-float" style="animation-delay: 0.6s;">
                     <div class="overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="AI Predictive Analytics" class="project-img">
                     </div>
@@ -971,7 +1109,7 @@
             
             <div class="flex flex-col lg:flex-row gap-14">
                 <div class="lg:w-1/2 animate-fade-in delay-100">
-                    <div class="premium-card p-8">
+                    <div class="premium-card p-8 card-3d">
                         <form id="contactForm">
                             <div class="mb-7">
                                 <label for="name" class="block text-silver mb-3 text-lg">Name</label>
@@ -998,7 +1136,7 @@
                 </div>
                 
                 <div class="lg:w-1/2 animate-fade-in delay-200">
-                    <div class="premium-card p-8 h-full">
+                    <div class="premium-card p-8 h-full card-3d">
                         <h3 class="text-xl font-bold mb-7">Contact Information</h3>
                         
                         <div class="space-y-7">
@@ -1257,6 +1395,166 @@
             // Add a slight delay to hero animations for better effect
             document.querySelectorAll('.hero-content > *').forEach((el, i) => {
                 el.style.animationDelay = `${i * 0.2}s`;
+            });
+            
+            // Initialize 3D background
+            initThreeJS();
+            
+            // Create floating particles
+            createParticles();
+            
+            // Animate stats counters
+            animateCounters();
+        });
+        
+        // 3D Background with Three.js
+        function initThreeJS() {
+            const canvas = document.getElementById('three-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            // Create geometric shapes for background
+            const geometry = new THREE.IcosahedronGeometry(1, 0);
+            const material = new THREE.MeshPhongMaterial({ 
+                color: 0xd6b161,
+                shininess: 100,
+                transparent: true,
+                opacity: 0.05
+            });
+            
+            // Create multiple shapes
+            const shapes = [];
+            const numShapes = 15;
+            
+            for (let i = 0; i < numShapes; i++) {
+                const shape = new THREE.Mesh(geometry, material);
+                
+                // Random position
+                shape.position.x = Math.random() * 20 - 10;
+                shape.position.y = Math.random() * 20 - 10;
+                shape.position.z = Math.random() * 10 - 20;
+                
+                // Random rotation
+                shape.rotation.x = Math.random() * Math.PI;
+                shape.rotation.y = Math.random() * Math.PI;
+                
+                // Random scale
+                const scale = Math.random() * 2 + 0.5;
+                shape.scale.set(scale, scale, scale);
+                
+                scene.add(shape);
+                shapes.push(shape);
+            }
+            
+            // Add ambient light
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            
+            // Add directional light
+            const directionalLight = new THREE.DirectionalLight(0xd6b161, 0.5);
+            directionalLight.position.set(0, 1, 1);
+            scene.add(directionalLight);
+            
+            camera.position.z = 5;
+            
+            // Animation
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                shapes.forEach(shape => {
+                    shape.rotation.x += 0.005;
+                    shape.rotation.y += 0.005;
+                    
+                    // Float up and down
+                    shape.position.y += Math.sin(Date.now() * 0.001 + shape.position.x) * 0.005;
+                });
+                
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+        
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size
+                const size = Math.random() * 20 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation delay
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Animate counters
+        function animateCounters() {
+            const projectCounter = document.getElementById('projectCounter');
+            const techCounter = document.getElementById('techCounter');
+            const xpCounter = document.getElementById('xpCounter');
+            
+            animateValue(projectCounter, 0, 15, 2000);
+            animateValue(techCounter, 0, 20, 2000);
+            animateValue(xpCounter, 0, 2, 2000);
+        }
+        
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start) + '+';
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Add 3D tilt effect to cards
+        document.querySelectorAll('.card-3d').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                if (window.innerWidth > 768) { // Only on desktop
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-10px)`;
+                }
+            });
+            
+            card.addEventListener('mouseenter', () => {
+                if (window.innerWidth > 768) {
+                    card.style.transition = 'none';
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                if (window.innerWidth > 768) {
+                    card.style.transition = 'transform 0.5s ease';
+                    card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+                }
             });
         });
     </script>
