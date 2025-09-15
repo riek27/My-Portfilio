@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riek Gatluak Geka | Frontend Engineer & UI Specialist</title>
-    <meta name="description" content="Frontend engineer specializing in responsive web applications, interactive UI, and modern JavaScript frameworks. Creating beautiful, performant user experiences.">
-    <meta name="keywords" content="Frontend Developer, JavaScript, React, UI Engineer, Web Developer, Responsive Design">
+    <title>Riek Gatluak Geka | Full-Stack Engineer & Startup Founder</title>
+    <meta name="description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development. Building scalable, high-performance applications.">
+    <meta name="keywords" content="Full-Stack Developer, AI/ML Engineer, Blockchain Developer, Startup Founder, Frontend Engineer, Backend Developer">
     <meta name="author" content="Riek Gatluak Geka">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://riek27.github.io/">
-    <meta property="og:title" content="Riek Gatluak Geka | Frontend Engineer & UI Specialist">
-    <meta property="og:description" content="Frontend engineer specializing in responsive web applications, interactive UI, and modern JavaScript frameworks.">
+    <meta property="og:title" content="Riek Gatluak Geka | Full-Stack Engineer & Startup Founder">
+    <meta property="og:description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://riek27.github.io/">
-    <meta property="twitter:title" content="Riek Gatluak Geka | Frontend Engineer & UI Specialist">
-    <meta property="twitter:description" content="Frontend engineer specializing in responsive web applications, interactive UI, and modern JavaScript frameworks.">
+    <meta property="twitter:title" content="Riek Gatluak Geka | Full-Stack Engineer & Startup Founder">
+    <meta property="twitter:description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development.">
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
-    
-    <!-- Preload critical resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -45,26 +39,12 @@
                         'float-slow': 'float 6s ease-in-out infinite',
                         'float-medium': 'float 5s ease-in-out infinite',
                         'float-fast': 'float 4s ease-in-out infinite',
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                        'slide-up': 'slideUp 0.8s ease-out forwards',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-15px)' },
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
-                    },
-                    transitionProperty: {
-                        'height': 'height',
-                        'spacing': 'margin, padding',
                     }
                 }
             }
@@ -72,6 +52,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <style>
@@ -154,7 +136,7 @@
         }
         
         .skill-bar {
-            transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: width 2s ease;
         }
         
         .typewriter {
@@ -177,7 +159,7 @@
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .animate-on-scroll.visible {
@@ -203,7 +185,6 @@
         .nav-scroll {
             background: rgba(15, 23, 42, 0.95);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
         }
 
         .lazy-load {
@@ -315,35 +296,6 @@
             opacity: 1;
             visibility: visible;
         }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            .typewriter {
-                animation: none;
-                border-right: none;
-                white-space: normal;
-            }
-            
-            .project-card:hover {
-                transform: none;
-            }
-            
-            .shape {
-                display: none;
-            }
-        }
-
-        /* Reduced motion for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -410,14 +362,14 @@
     <section class="min-h-screen flex items-center pt-16 pb-28 px-6 md:px-12" style="padding-top: 80px;">
         <div class="container mx-auto">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-on-scroll">Riek Gatluak <span class="gradient-text">Geka</span></h1>
-                <div class="typewriter text-xl md:text-2xl text-gray-300 mb-8 animate-on-scroll" style="animation-delay: 0.3s">
-                    Frontend Engineer | UI/UX Specialist | JavaScript Developer | Creative Problem Solver
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Riek Gatluak <span class="gradient-text">Geka</span></h1>
+                <div class="typewriter text-xl md:text-2xl text-gray-300 mb-8">
+                    Frontend Engineer | Full-Stack Developer | Startup Founder | Problem Solver
                 </div>
-                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.6s">
-                    I build responsive, accessible, and performant web experiences with modern technologies and a keen eye for design.
+                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                    I build scalable, high-performance apps and infrastructure — from sleek UIs to complex distributed systems.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-on-scroll" style="animation-delay: 0.9s">
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="#projects" class="px-8 py-4 gradient-bg rounded-full font-semibold glow hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                         🚀 View Projects
                     </a>
@@ -427,7 +379,7 @@
                 </div>
             </div>
             
-            <div class="flex justify-center space-x-6 mt-16 animate-on-scroll" style="animation-delay: 1.2s">
+            <div class="flex justify-center space-x-6 mt-16">
                 <a href="mailto:riekgatluak25@gmail.com" class="text-2xl hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
@@ -447,10 +399,10 @@
     <!-- About Section -->
     <section id="about" class="py-20 px-6 md:px-12">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text animate-on-scroll">About Me</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">About Me</h2>
             
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div class="w-full lg:w-1/3 flex justify-center animate-on-scroll">
+                <div class="w-full lg:w-1/3 flex justify-center">
                     <div class="relative">
                         <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glow animate-float-slow">
                             <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="w-full h-full object-cover lazy-load" id="profile-img">
@@ -459,15 +411,15 @@
                     </div>
                 </div>
                 
-                <div class="w-full lg:w-2/3 glass-card p-8 md:p-12 rounded-2xl animate-on-scroll">
+                <div class="w-full lg:w-2/3 glass-card p-8 md:p-12 rounded-2xl">
                     <p class="text-lg text-gray-300 mb-6">
-                        I'm a passionate frontend engineer with expertise in creating responsive, accessible, and performant web applications. 
+                        I'm a multi-disciplinary engineer with expertise spanning frontend, backend, AI/ML infrastructure, blockchain, and startup product development. 
                     </p>
                     <p class="text-lg text-gray-300 mb-6">
-                        With a strong focus on user experience and modern development practices, I specialize in turning complex design concepts into functional, beautiful interfaces that work seamlessly across all devices.
+                        As the founder of <span class="text-indigo-300 font-medium">CoreCompute</span> (decentralized AI compute platform) and <span class="text-cyan-300 font-medium">Blocentra</span> (Bitcoin infrastructure), I've led the development of cutting-edge solutions that solve real-world problems.
                     </p>
                     <p class="text-lg text-gray-300">
-                        My approach combines technical expertise with an eye for design, ensuring that every project I work on not only functions flawlessly but also delivers an exceptional user experience.
+                        My passion lies in building scalable systems that bridge the gap between complex technology and user-friendly experiences. I thrive in challenging environments where I can leverage my full-stack expertise to deliver impactful solutions.
                     </p>
                     
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -480,12 +432,12 @@
                             <div class="text-sm text-gray-400">Projects</div>
                         </div>
                         <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <div class="text-3xl font-bold gradient-text">100%</div>
-                            <div class="text-sm text-gray-400">Responsive</div>
+                            <div class="text-3xl font-bold gradient-text">2</div>
+                            <div class="text-sm text-gray-400">Startups</div>
                         </div>
                         <div class="text-center p-4 bg-slate-800 rounded-lg">
                             <div class="text-3xl font-bold gradient-text">4</div>
-                            <div class="text-sm text-gray-400">Frameworks</div>
+                            <div class="text-sm text-gray-400">Domains</div>
                         </div>
                     </div>
                 </div>
@@ -496,68 +448,68 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-6 md:px-12 bg-slate-900/50">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text animate-on-scroll">Featured Projects</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Responsive Dashboard -->
-                <div class="project-card glass-card p-6 rounded-2xl animate-on-scroll">
+                <!-- CoreCompute -->
+                <div class="project-card glass-card p-6 rounded-2xl">
                     <div class="mb-6 h-48 overflow-hidden rounded-xl">
-                        <img src="assets/dashboard.jpg" alt="Responsive Dashboard" class="w-full h-full object-cover lazy-load" loading="lazy">
+                        <img src="assets/corecompute.jpg" alt="CoreCompute" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Responsive Dashboard</h3>
-                    <p class="text-gray-400 mb-4">A fully responsive admin dashboard with interactive charts, dark/light mode, and mobile-first design.</p>
+                    <h3 class="text-2xl font-bold mb-2">CoreCompute</h3>
+                    <p class="text-gray-400 mb-4">Decentralized AI compute network leveraging idle GPUs to reduce AI training costs by up to 40%.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">TailwindCSS</span>
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Chart.js</span>
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Responsive</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Blockchain</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Web3</span>
                     </div>
                     <div class="flex justify-between">
-                        <a href="#" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
-                        <a href="#" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
+                        <a href="https://riek27.github.io/CoreCompute/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
+                        <a href="https://github.com/riek27/CoreCompute" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
                     </div>
                 </div>
                 
-                <!-- E-commerce UI -->
-                <div class="project-card glass-card p-6 rounded-2xl animate-on-scroll" style="animation-delay: 0.2s">
+                <!-- Blocentra -->
+                <div class="project-card glass-card p-6 rounded-2xl">
                     <div class="mb-6 h-48 overflow-hidden rounded-xl">
-                        <img src="assets/ecommerce.jpg" alt="E-commerce UI" class="w-full h-full object-cover lazy-load" loading="lazy">
+                        <img src="assets/blocentr.jpg" alt="Blocentra" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">E-commerce UI</h3>
-                    <p class="text-gray-400 mb-4">Modern e-commerce interface with product filtering, cart functionality, and smooth animations.</p>
+                    <h3 class="text-2xl font-bold mb-2">Blocentra</h3>
+                    <p class="text-gray-400 mb-4">Bitcoin infrastructure platform providing blockchain tools and services for the crypto economy.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">Vue.js</span>
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">CSS3</span>
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">UI/UX</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">TailwindCSS</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">Bitcoin</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">APIs</span>
                     </div>
                     <div class="flex justify-between">
-                        <a href="#" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
-                        <a href="#" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
+                        <a href="https://riek27.github.io/blocentraAI/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
+                        <a href="https://github.com/riek27/blocentraAI" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
                     </div>
                 </div>
                 
-                <!-- Portfolio Template -->
-                <div class="project-card glass-card p-6 rounded-2xl animate-on-scroll" style="animation-delay: 0.4s">
+                <!-- AI Predictive Maintenance -->
+                <div class="project-card glass-card p-6 rounded-2xl">
                     <div class="mb-6 h-48 overflow-hidden rounded-xl">
-                        <img src="assets/portfolio-template.jpg" alt="Portfolio Template" class="w-full h-full object-cover lazy-load" loading="lazy">
+                        <img src="assets/sensor.jpg" alt="AI Predictive Maintenance" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Portfolio Template</h3>
-                    <p class="text-gray-400 mb-4">A customizable portfolio template with smooth animations, dark mode, and responsive design.</p>
+                    <h3 class="text-2xl font-bold mb-2">AI Predictive Maintenance</h3>
+                    <p class="text-gray-400 mb-4">Predictive infrastructure maintenance powered by AI, analyzing sensor data to prevent failures.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">HTML/CSS</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">GSAP</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Responsive</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">AI/ML</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">IoT</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Data Viz</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Python</span>
                     </div>
                     <div class="flex justify-between">
-                        <a href="#" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
-                        <a href="#" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
+                        <a href="https://riek27.github.io/Ai-predictive/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
+                        <a href="https://github.com/riek27/Ai-predictive" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold">GitHub</a>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12 animate-on-scroll">
+            <div class="text-center mt-12">
                 <a href="https://github.com/riek27" target="_blank" class="px-8 py-3 glass-card rounded-full font-semibold inline-flex items-center hover:glow transition-all duration-300">
                     View More on GitHub <i class="fas fa-arrow-right ml-2"></i>
                 </a>
@@ -568,25 +520,16 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 px-6 md:px-12">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text animate-on-scroll">Technical Expertise</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Technical Expertise</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Frontend -->
-                <div class="glass-card p-8 rounded-2xl animate-on-scroll">
+                <div class="glass-card p-8 rounded-2xl">
                     <h3 class="text-2xl font-bold mb-6 text-indigo-300">Frontend Development</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>HTML5/CSS3</span>
-                                <span>98%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 98%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>JavaScript/ES6+</span>
+                                <span>HTML/CSS/JS</span>
                                 <span>95%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
@@ -596,49 +539,31 @@
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span>React</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>TailwindCSS</span>
                                 <span>92%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 92%"></div>
                             </div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Vue.js</span>
-                                <span>88%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 
-                <!-- Styling & Design -->
-                <div class="glass-card p-8 rounded-2xl animate-on-scroll" style="animation-delay: 0.2s">
-                    <h3 class="text-2xl font-bold mb-6 text-cyan-300">Styling & Design</h3>
+                <!-- Backend -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-300">Backend & APIs</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>CSS Frameworks</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>CSS Preprocessors</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>UI/UX Design</span>
+                                <span>Node.js/Express</span>
                                 <span>88%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
@@ -647,78 +572,78 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>Responsive Design</span>
-                                <span>97%</span>
+                                <span>REST/GraphQL APIs</span>
+                                <span>85%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 97%"></div>
+                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Database Design</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 82%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Tools & Build -->
-                <div class="glass-card p-8 rounded-2xl animate-on-scroll" style="animation-delay: 0.4s">
-                    <h3 class="text-2xl font-bold mb-6 text-emerald-300">Tools & Build</h3>
+                <!-- Infrastructure -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-emerald-300">Infrastructure & DevOps</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>Git/GitHub</span>
-                                <span>93%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 93%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Webpack/Vite</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>NPM/Yarn</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Testing (Jest)</span>
+                                <span>AWS Cloud</span>
                                 <span>80%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 80%"></div>
                             </div>
                         </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Docker</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>CI/CD Pipelines</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Specialties -->
-                <div class="glass-card p-8 rounded-2xl animate-on-scroll" style="animation-delay: 0.6s">
+                <div class="glass-card p-8 rounded-2xl">
                     <h3 class="text-2xl font-bold mb-6 text-purple-300">Specializations</h3>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <i class="fas fa-mobile-alt text-3xl mb-2 text-indigo-400"></i>
-                            <div>Responsive Design</div>
+                            <i class="fas fa-brain text-3xl mb-2 text-indigo-400"></i>
+                            <div>AI/ML Infrastructure</div>
                         </div>
                         <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <i class="fas fa-tachometer-alt text-3xl mb-2 text-cyan-400"></i>
-                            <div>Performance</div>
+                            <i class="fas fa-link text-3xl mb-2 text-cyan-400"></i>
+                            <div>Blockchain</div>
                         </div>
                         <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <i class="fas fa-paint-brush text-3xl mb-2 text-emerald-400"></i>
-                            <div>UI/UX</div>
+                            <i class="fas fa-network-wired text-3xl mb-2 text-emerald-400"></i>
+                            <div>Distributed Systems</div>
                         </div>
                         <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <i class="fas fa-bolt text-3xl mb-2 text-purple-400"></i>
-                            <div>Animations</div>
+                            <i class="fas fa-rocket text-3xl mb-2 text-purple-400"></i>
+                            <div>Startup Development</div>
                         </div>
                     </div>
                 </div>
@@ -729,12 +654,12 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 md:px-12 bg-slate-900/50">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text animate-on-scroll">Get In Touch</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
             
             <div class="flex flex-col lg:flex-row gap-12">
-                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl animate-on-scroll">
-                    <h3 class="text-2xl font-bold mb-6">Open to frontend and UI engineering roles — ready to create amazing user experiences.</h3>
-                    <p class="text-gray-400 mb-8">I'm currently exploring new opportunities where I can apply my frontend expertise to build innovative, user-friendly solutions. Let's connect!</p>
+                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Open to frontend, full-stack, and infrastructure roles — ready to contribute from day one.</h3>
+                    <p class="text-gray-400 mb-8">I'm currently exploring new opportunities where I can apply my multidisciplinary expertise to build innovative solutions. Let's connect!</p>
                     
                     <div class="space-y-6">
                         <div class="flex items-center">
@@ -779,7 +704,7 @@
                     </div>
                 </div>
                 
-                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl animate-on-scroll" style="animation-delay: 0.2s">
+                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl">
                     <form id="contact-form" class="space-y-6">
                         <div>
                             <label for="name" class="block mb-2 font-medium">Name</label>
@@ -930,7 +855,7 @@
                 
                 // Create particles with improved performance
                 const particlesGeometry = new THREE.BufferGeometry();
-                const particlesCount = 1000; // Reduced for better performance
+                const particlesCount = 1200; // Reduced for better performance
                 
                 const posArray = new Float32Array(particlesCount * 3);
                 const colorArray = new Float32Array(particlesCount * 3);
@@ -1117,4 +1042,42 @@
                     });
                 });
                 
-                lazyImages.forEach(img => imageObserver
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for browsers without Intersection Observer
+                lazyImages.forEach(img => img.classList.add('loaded'));
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close mobile menu if open
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Preload critical images
+            function preloadImage(url) {
+                const img = new Image();
+                img.src = url;
+            }
+            
+            // Preload hero image
+            preloadImage('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
+        });
+    </script>
+</body>
+</html>
