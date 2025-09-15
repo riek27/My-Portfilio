@@ -47,6 +47,11 @@
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-15px)' },
                         }
+                    },
+                    screens: {
+                        'xs': '475px',
+                        '3xl': '1920px',
+                        '4xl': '2560px',
                     }
                 }
             }
@@ -353,6 +358,81 @@
         .success-message {
             animation: fadeIn 0.5s ease forwards;
         }
+
+        /* Responsive Typography */
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+        }
+
+        .section-padding {
+            padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 3rem);
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            .theme-switcher {
+                top: 80px;
+                right: 15px;
+            }
+            
+            .theme-button {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .shape {
+                display: none;
+            }
+            
+            .glass-card {
+                border-radius: 12px;
+            }
+            
+            .project-card:hover {
+                transform: none;
+            }
+            
+            .typewriter {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .theme-switcher {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            .container {
+                max-width: 2000px;
+            }
+            
+            html {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -378,10 +458,10 @@
     <div class="shape w-64 h-64 bg-emerald-500 bottom-40 left-1/4 animate-float-fast"></div>
     
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 py-4 px-6 md:px-12 glass-card" style="top: 8px;">
+    <nav id="navbar" class="fixed w-full z-50 py-4 px-4 md:px-8 lg:px-12 glass-card" style="top: 8px;">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gradient-text">Riek Gatluak</a>
-            <div class="hidden md:flex space-x-8">
+            <a href="#" class="text-xl sm:text-2xl font-bold gradient-text">Riek Gatluak</a>
+            <div class="hidden md:flex space-x-6 lg:space-x-8">
                 <a href="#about" class="hover:text-indigo-300 transition-colors duration-300">About</a>
                 <a href="#projects" class="hover:text-indigo-300 transition-colors duration-300">Projects</a>
                 <a href="#skills" class="hover:text-indigo-300 transition-colors duration-300">Skills</a>
@@ -395,46 +475,46 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden glass-card mt-4 p-4 rounded-lg">
             <div class="flex flex-col space-y-3">
-                <a href="#about" class="hover:text-indigo-300 transition-colors duration-300">About</a>
-                <a href="#projects" class="hover:text-indigo-300 transition-colors duration-300">Projects</a>
-                <a href="#skills" class="hover:text-indigo-300 transition-colors duration-300">Skills</a>
-                <a href="#contact" class="hover:text-indigo-300 transition-colors duration-300">Contact</a>
+                <a href="#about" class="hover:text-indigo-300 transition-colors duration-300 py-2">About</a>
+                <a href="#projects" class="hover:text-indigo-300 transition-colors duration-300 py-2">Projects</a>
+                <a href="#skills" class="hover:text-indigo-300 transition-colors duration-300 py-2">Skills</a>
+                <a href="#contact" class="hover:text-indigo-300 transition-colors duration-300 py-2">Contact</a>
             </div>
         </div>
     </nav>
     
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-16 pb-28 px-6 md:px-12" style="padding-top: 80px;">
+    <section class="min-h-screen flex items-center pt-16 pb-20 px-4 md:px-8 lg:px-12 section-padding" style="padding-top: 80px;">
         <div class="container mx-auto">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6">Riek Gatluak <span class="gradient-text">Geka</span></h1>
-                <div class="typewriter text-xl md:text-2xl text-gray-300 mb-8">
+                <h1 class="font-bold mb-4 md:mb-6">Riek Gatluak <span class="gradient-text">Geka</span></h1>
+                <div class="typewriter hero-subtitle text-gray-300 mb-6 md:mb-8">
                     Frontend Engineer | UI/UX Specialist | Startup Founder
                 </div>
-                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                <p class="text-base md:text-lg text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto">
                     Specializing in sleek, modern UIs with strong fundamentals in backend integration. Building scalable, high-performance applications with exceptional user experiences.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#projects" class="px-8 py-4 gradient-bg rounded-full font-semibold glow hover:shadow-lg transition-all duration-300 transform hover:scale-105 ripple-button">
+                <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                    <a href="#projects" class="px-6 py-3 sm:px-8 sm:py-4 gradient-bg rounded-full font-semibold glow hover:shadow-lg transition-all duration-300 transform hover:scale-105 ripple-button text-sm sm:text-base">
                         🚀 View Projects
                     </a>
-                    <a href="assets/riekgatluakcvresume.pdf" download class="px-8 py-4 glass-card rounded-full font-semibold hover:glow transition-all duration-300 transform hover:scale-105 ripple-button">
+                    <a href="assets/riekgatluakcvresume.pdf" download class="px-6 py-3 sm:px-8 sm:py-4 glass-card rounded-full font-semibold hover:glow transition-all duration-300 transform hover:scale-105 ripple-button text-sm sm:text-base">
                         📄 Download Resume
                     </a>
                 </div>
             </div>
             
-            <div class="flex justify-center space-x-6 mt-16">
-                <a href="mailto:riekgatluak25@gmail.com" class="text-2xl hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
+            <div class="flex justify-center space-x-6 mt-12 md:mt-16">
+                <a href="mailto:riekgatluak25@gmail.com" class="text-xl hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://wa.me/211981211736" target="_blank" class="text-2xl hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
+                <a href="https://wa.me/211981211736" target="_blank" class="text-xl hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-2xl hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-xl hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/riek27" target="_blank" class="text-2xl hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
+                <a href="https://github.com/riek27" target="_blank" class="text-xl hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -442,47 +522,47 @@
     </section>
     
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 md:px-12">
+    <section id="about" class="section-padding">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            <h2 class="text-center mb-12 md:mb-16 gradient-text">About Me</h2>
             
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div class="w-full lg:w-1/3 flex justify-center">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+                <div class="w-full lg:w-2/5 flex justify-center">
                     <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glow animate-float-slow">
+                        <div class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden glow animate-float-slow">
                             <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="w-full h-full object-cover lazy-load" id="profile-img">
                         </div>
-                        <div class="absolute -inset-4 border-4 border-transparent rounded-full gradient-bg -z-10 animate-float-medium" style="animation-delay: 1s;"></div>
+                        <div class="absolute -inset-3 sm:-inset-4 border-4 border-transparent rounded-full gradient-bg -z-10 animate-float-medium" style="animation-delay: 1s;"></div>
                     </div>
                 </div>
                 
-                <div class="w-full lg:w-2/3 glass-card p-8 md:p-12 rounded-2xl">
-                    <p class="text-lg text-gray-300 mb-6">
+                <div class="w-full lg:w-3/5 glass-card p-6 md:p-8 lg:p-10 xl:p-12 rounded-2xl">
+                    <p class="text-base md:text-lg text-gray-300 mb-4 md:mb-6">
                         I'm a Frontend Engineer with expertise in creating modern, responsive user interfaces and strong fundamentals in backend integration. My passion lies in building scalable applications that bridge the gap between complex technology and exceptional user experiences.
                     </p>
-                    <p class="text-lg text-gray-300 mb-6">
+                    <p class="text-base md:text-lg text-gray-300 mb-4 md:mb-6">
                         As the founder of <span class="text-indigo-300 font-medium">CoreCompute</span> (decentralized AI compute platform) and <span class="text-cyan-300 font-medium">Blocentra</span> (Bitcoin infrastructure), I've led the development of cutting-edge solutions with a focus on sleek UI/UX design and seamless user experiences.
                     </p>
-                    <p class="text-lg text-gray-300">
+                    <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
                         I thrive in challenging environments where I can leverage my frontend expertise to deliver impactful solutions. My background in startup development gives me a unique perspective on building products that users love.
                     </p>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <div class="text-3xl font-bold gradient-text">1+</div>
-                            <div class="text-sm text-gray-400">Years Experience</div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">1+</div>
+                            <div class="text-xs md:text-sm text-gray-400">Years Experience</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <div class="text-3xl font-bold gradient-text">20+</div>
-                            <div class="text-sm text-gray-400">Projects</div>
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">15+</div>
+                            <div class="text-xs md:text-sm text-gray-400">Projects</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <div class="text-3xl font-bold gradient-text">2</div>
-                            <div class="text-sm text-gray-400">Startups</div>
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">2</div>
+                            <div class="text-xs md:text-sm text-gray-400">Startups</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <div class="text-3xl font-bold gradient-text">100%</div>
-                            <div class="text-sm text-gray-400">UI Focus</div>
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">100%</div>
+                            <div class="text-xs md:text-sm text-gray-400">UI Focus</div>
                         </div>
                     </div>
                 </div>
@@ -491,79 +571,79 @@
     </section>
     
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 md:px-12 bg-slate-900/50">
+    <section id="projects" class="py-16 md:py-20 px-4 md:px-8 lg:px-12 bg-slate-900/50">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            <h2 class="text-center mb-12 md:mb-16 gradient-text">Featured Projects</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- CoreCompute -->
-                <div class="project-card glass-card p-6 rounded-2xl">
-                    <div class="mb-6 h-48 overflow-hidden rounded-xl relative">
+                <div class="project-card glass-card p-5 md:p-6 rounded-2xl">
+                    <div class="mb-5 md:mb-6 h-40 sm:h-48 overflow-hidden rounded-xl relative">
                         <img src="assets/corecompute.jpg" alt="CoreCompute" class="w-full h-full object-cover lazy-load" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                            <span class="px-3 py-1 bg-indigo-500/80 text-white rounded-full text-sm">Cloud Infrastructure</span>
+                            <span class="px-3 py-1 bg-indigo-500/80 text-white rounded-full text-xs md:text-sm">Cloud Infrastructure</span>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">CoreCompute</h3>
-                    <p class="text-gray-400 mb-4">Designed and implemented the frontend for a decentralized AI compute network with modern React UI, animations, and seamless user experience.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">TailwindCSS</span>
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Animations</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">CoreCompute</h3>
+                    <p class="text-gray-400 text-sm md:text-base mb-4">Designed and implemented the frontend for a decentralized AI compute network with modern React UI, animations, and seamless user experience.</p>
+                    <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
+                        <span class="px-2 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-xs md:text-sm">React</span>
+                        <span class="px-2 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-xs md:text-sm">TailwindCSS</span>
+                        <span class="px-2 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-xs md:text-sm">Animations</span>
                     </div>
-                    <div class="flex justify-between">
-                        <a href="https://riek27.github.io/CoreCompute/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow ripple-button">Live Demo</a>
-                        <a href="https://github.com/riek27/CoreCompute" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold ripple-button">GitHub</a>
+                    <div class="flex justify-between gap-2">
+                        <a href="https://riek27.github.io/CoreCompute/" target="_blank" class="px-3 py-2 gradient-bg rounded-lg text-xs md:text-sm font-semibold glow ripple-button flex-1 text-center">Live Demo</a>
+                        <a href="https://github.com/riek27/CoreCompute" target="_blank" class="px-3 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold ripple-button flex-1 text-center">GitHub</a>
                     </div>
                 </div>
                 
                 <!-- Blocentra -->
-                <div class="project-card glass-card p-6 rounded-2xl">
-                    <div class="mb-6 h-48 overflow-hidden rounded-xl relative">
+                <div class="project-card glass-card p-5 md:p-6 rounded-2xl">
+                    <div class="mb-5 md:mb-6 h-40 sm:h-48 overflow-hidden rounded-xl relative">
                         <img src="assets/blocentr.jpg" alt="Blocentra" class="w-full h-full object-cover lazy-load" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                            <span class="px-3 py-1 bg-cyan-500/80 text-white rounded-full text-sm">Blockchain</span>
+                            <span class="px-3 py-1 bg-cyan-500/80 text-white rounded-full text-xs md:text-sm">Blockchain</span>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Blocentra</h3>
-                    <p class="text-gray-400 mb-4">Created a responsive Bitcoin infrastructure platform with modern UI components, data visualization, and integrated backend APIs for functionality.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">TailwindCSS</span>
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">Data Viz</span>
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">APIs</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Blocentra</h3>
+                    <p class="text-gray-400 text-sm md:text-base mb-4">Created a responsive Bitcoin infrastructure platform with modern UI components, data visualization, and integrated backend APIs for functionality.</p>
+                    <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
+                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">React</span>
+                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">TailwindCSS</span>
+                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">Data Viz</span>
+                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">APIs</span>
                     </div>
-                    <div class="flex justify-between">
-                        <a href="https://riek27.github.io/blocentraAI/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow ripple-button">Live Demo</a>
-                        <a href="https://github.com/riek27/blocentraAI" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold ripple-button">GitHub</a>
+                    <div class="flex justify-between gap-2">
+                        <a href="https://riek27.github.io/blocentraAI/" target="_blank" class="px-3 py-2 gradient-bg rounded-lg text-xs md:text-sm font-semibold glow ripple-button flex-1 text-center">Live Demo</a>
+                        <a href="https://github.com/riek27/blocentraAI" target="_blank" class="px-3 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold ripple-button flex-1 text-center">GitHub</a>
                     </div>
                 </div>
                 
                 <!-- AI Predictive Maintenance -->
-                <div class="project-card glass-card p-6 rounded-2xl">
-                    <div class="mb-6 h-48 overflow-hidden rounded-xl relative">
+                <div class="project-card glass-card p-5 md:p-6 rounded-2xl">
+                    <div class="mb-5 md:mb-6 h-40 sm:h-48 overflow-hidden rounded-xl relative">
                         <img src="assets/sensor.jpg" alt="AI Predictive Maintenance" class="w-full h-full object-cover lazy-load" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                            <span class="px-3 py-1 bg-emerald-500/80 text-white rounded-full text-sm">AI/IoT</span>
+                            <span class="px-3 py-1 bg-emerald-500/80 text-white rounded-full text-xs md:text-sm">AI/IoT</span>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">AI Predictive Maintenance</h3>
-                    <p class="text-gray-400 mb-4">Built an interactive dashboard with complex data visualization components for predictive infrastructure maintenance powered by AI.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">D3.js</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Data Viz</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">UI/UX</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">AI Predictive Maintenance</h3>
+                    <p class="text-gray-400 text-sm md:text-base mb-4">Built an interactive dashboard with complex data visualization components for predictive infrastructure maintenance powered by AI.</p>
+                    <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
+                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">React</span>
+                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">D3.js</span>
+                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">Data Viz</span>
+                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">UI/UX</span>
                     </div>
-                    <div class="flex justify-between">
-                        <a href="https://riek27.github.io/Ai-predictive/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow ripple-button">Live Demo</a>
-                        <a href="https://github.com/riek27/Ai-predictive" target="_blank" class="px-4 py-2 glass-card rounded-lg text-sm font-semibold ripple-button">GitHub</a>
+                    <div class="flex justify-between gap-2">
+                        <a href="https://riek27.github.io/Ai-predictive/" target="_blank" class="px-3 py-2 gradient-bg rounded-lg text-xs md:text-sm font-semibold glow ripple-button flex-1 text-center">Live Demo</a>
+                        <a href="https://github.com/riek27/Ai-predictive" target="_blank" class="px-3 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold ripple-button flex-1 text-center">GitHub</a>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="https://github.com/riek27" target="_blank" class="px-8 py-3 glass-card rounded-full font-semibold inline-flex items-center hover:glow transition-all duration-300 ripple-button">
+            <div class="text-center mt-10 md:mt-12">
+                <a href="https://github.com/riek27" target="_blank" class="px-6 py-3 glass-card rounded-full font-semibold inline-flex items-center hover:glow transition-all duration-300 ripple-button text-sm md:text-base">
                     View More on GitHub <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -571,19 +651,19 @@
     </section>
     
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-6 md:px-12">
+    <section id="skills" class="section-padding">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Technical Expertise</h2>
+            <h2 class="text-center mb-12 md:mb-16 gradient-text">Technical Expertise</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
                 <!-- Frontend -->
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-indigo-300">Frontend Development</h3>
+                <div class="glass-card p-6 md:p-8 rounded-2xl">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-indigo-300">Frontend Development</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>HTML/CSS/JS</span>
-                                <span>95%</span>
+                                <span class="text-sm md:text-base">HTML/CSS/JS</span>
+                                <span class="text-sm md:text-base">95%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 95%"></div>
@@ -591,8 +671,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>React</span>
-                                <span>90%</span>
+                                <span class="text-sm md:text-base">React</span>
+                                <span class="text-sm md:text-base">90%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
@@ -600,8 +680,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>TailwindCSS</span>
-                                <span>92%</span>
+                                <span class="text-sm md:text-base">TailwindCSS</span>
+                                <span class="text-sm md:text-base">92%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 92%"></div>
@@ -611,13 +691,13 @@
                 </div>
                 
                 <!-- Backend -->
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-cyan-300">Backend Integration</h3>
+                <div class="glass-card p-6 md:p-8 rounded-2xl">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-cyan-300">Backend Integration</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>API Integration</span>
-                                <span>88%</span>
+                                <span class="text-sm md:text-base">API Integration</span>
+                                <span class="text-sm md:text-base">88%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 88%"></div>
@@ -625,8 +705,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>REST/GraphQL APIs</span>
-                                <span>85%</span>
+                                <span class="text-sm md:text-base">REST/GraphQL APIs</span>
+                                <span class="text-sm md:text-base">85%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
@@ -634,8 +714,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>Database Design</span>
-                                <span>82%</span>
+                                <span class="text-sm md:text-base">Database Design</span>
+                                <span class="text-sm md:text-base">82%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 82%"></div>
@@ -645,13 +725,13 @@
                 </div>
                 
                 <!-- UI/UX -->
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-emerald-300">UI/UX Design</h3>
+                <div class="glass-card p-6 md:p-8 rounded-2xl">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-emerald-300">UI/UX Design</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>User Experience</span>
-                                <span>90%</span>
+                                <span class="text-sm md:text-base">User Experience</span>
+                                <span class="text-sm md:text-base">90%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
@@ -659,8 +739,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>Responsive Design</span>
-                                <span>93%</span>
+                                <span class="text-sm md:text-base">Responsive Design</span>
+                                <span class="text-sm md:text-base">93%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 93%"></div>
@@ -668,8 +748,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>Prototyping</span>
-                                <span>85%</span>
+                                <span class="text-sm md:text-base">Prototyping</span>
+                                <span class="text-sm md:text-base">85%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
                                 <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
@@ -679,27 +759,27 @@
                 </div>
                 
                 <!-- Specialties -->
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-purple-300">Specializations</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-paint-brush text-3xl mb-2 text-indigo-400"></i>
-                            <div>UI Design</div>
+                <div class="glass-card p-6 md:p-8 rounded-2xl">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-purple-300">Specializations</h3>
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
+                            <i class="fas fa-paint-brush text-2xl md:text-3xl mb-2 text-indigo-400"></i>
+                            <div class="text-sm md:text-base">UI Design</div>
                             <div class="skill-tooltip">Creating visually appealing and intuitive user interfaces</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-mobile-alt text-3xl mb-2 text-cyan-400"></i>
-                            <div>Responsive Design</div>
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
+                            <i class="fas fa-mobile-alt text-2xl md:text-3xl mb-2 text-cyan-400"></i>
+                            <div class="text-sm md:text-base">Responsive Design</div>
                             <div class="skill-tooltip">Building applications that work seamlessly across all devices</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-bolt text-3xl mb-2 text-emerald-400"></i>
-                            <div>Performance</div>
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
+                            <i class="fas fa-bolt text-2xl md:text-3xl mb-2 text-emerald-400"></i>
+                            <div class="text-sm md:text-base">Performance</div>
                             <div class="skill-tooltip">Optimizing applications for speed and efficiency</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-rocket text-3xl mb-2 text-purple-400"></i>
-                            <div>Startup Development</div>
+                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
+                            <i class="fas fa-rocket text-2xl md:text-3xl mb-2 text-purple-400"></i>
+                            <div class="text-sm md:text-base">Startup Development</div>
                             <div class="skill-tooltip">Building products from concept to deployment</div>
                         </div>
                     </div>
@@ -709,96 +789,96 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 md:px-12 bg-slate-900/50">
+    <section id="contact" class="py-16 md:py-20 px-4 md:px-8 lg:px-12 bg-slate-900/50">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            <h2 class="text-center mb-12 md:mb-16 gradient-text">Get In Touch</h2>
             
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6">Open to frontend engineering roles — ready to create amazing user experiences from day one.</h3>
-                    <p class="text-gray-400 mb-8">I'm currently exploring new opportunities where I can apply my frontend expertise to build innovative solutions with sleek, modern UIs. Let's connect!</p>
+            <div class="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-12">
+                <div class="w-full lg:w-1/2 glass-card p-6 md:p-8 rounded-2xl">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Open to frontend engineering roles — ready to create amazing user experiences from day one.</h3>
+                    <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8">I'm currently exploring new opportunities where I can apply my frontend expertise to build innovative solutions with sleek, modern UIs. Let's connect!</p>
                     
-                    <div class="space-y-6">
+                    <div class="space-y-5 md:space-y-6">
                         <div class="flex items-center">
-                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                <i class="fas fa-envelope text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <div class="font-semibold">Email</div>
-                                <a href="mailto:riekgatluak25@gmail.com" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300">riekgatluak25@gmail.com</a>
+                                <div class="font-semibold text-sm md:text-base">Email</div>
+                                <a href="mailto:riekgatluak25@gmail.com" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300 text-sm md:text-base">riekgatluak25@gmail.com</a>
                             </div>
                         </div>
                         
                         <div class="flex items-center">
-                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
-                                <i class="fab fa-whatsapp"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                <i class="fab fa-whatsapp text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <div class="font-semibold">WhatsApp</div>
-                                <a href="https://wa.me/211981211736" target="_blank" class="text-gray-400 hover:text-green-300 transition-colors duration-300">+211 981 211 736</a>
+                                <div class="font-semibold text-sm md:text-base">WhatsApp</div>
+                                <a href="https://wa.me/211981211736" target="_blank" class="text-gray-400 hover:text-green-300 transition-colors duration-300 text-sm md:text-base">+211 981 211 736</a>
                             </div>
                         </div>
                         
                         <div class="flex items-center">
-                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
-                                <i class="fab fa-linkedin-in"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                <i class="fab fa-linkedin-in text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <div class="font-semibold">LinkedIn</div>
-                                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-gray-400 hover:text-blue-300 transition-colors duration-300">linkedin.com/in/riek-gatluak-geka</a>
+                                <div class="font-semibold text-sm md:text-base">LinkedIn</div>
+                                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-gray-400 hover:text-blue-300 transition-colors duration-300 text-sm md:text-base">linkedin.com/in/riek-gatluak-geka</a>
                             </div>
                         </div>
                         
                         <div class="flex items-center">
-                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
-                                <i class="fab fa-github"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                <i class="fab fa-github text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <div class="font-semibold">GitHub</div>
-                                <a href="https://github.com/riek27" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors duration-300">github.com/riek27</a>
+                                <div class="font-semibold text-sm md:text-base">GitHub</div>
+                                <a href="https://github.com/riek27" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors duration-300 text-sm md:text-base">github.com/riek27</a>
                             </div>
                         </div>
                         
                         <div class="flex items-center">
-                            <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                <i class="fas fa-map-marker-alt text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <div class="font-semibold">Location</div>
-                                <div class="text-gray-400">Juba, South Sudan</div>
+                                <div class="font-semibold text-sm md:text-base">Location</div>
+                                <div class="text-gray-400 text-sm md:text-base">Juba, South Sudan</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl">
-                    <form id="contact-form" class="space-y-6">
+                <div class="w-full lg:w-1/2 glass-card p-6 md:p-8 rounded-2xl">
+                    <form id="contact-form" class="space-y-5 md:space-y-6">
                         <div>
-                            <label for="name" class="block mb-2 font-medium">Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300">
+                            <label for="name" class="block mb-2 font-medium text-sm md:text-base">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300 text-sm md:text-base">
                         </div>
                         
                         <div>
-                            <label for="email" class="block mb-2 font-medium">Email</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300">
+                            <label for="email" class="block mb-2 font-medium text-sm md:text-base">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300 text-sm md:text-base">
                         </div>
                         
                         <div>
-                            <label for="message" class="block mb-2 font-medium">Message</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300"></textarea>
+                            <label for="message" class="block mb-2 font-medium text-sm md:text-base">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300 text-sm md:text-base"></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full px-6 py-4 gradient-bg rounded-lg font-semibold glow flex items-center justify-center hover:shadow-lg transition-all duration-300 ripple-button">
+                        <button type="submit" class="w-full px-5 py-3 md:px-6 md:py-4 gradient-bg rounded-lg font-semibold glow flex items-center justify-center hover:shadow-lg transition-all duration-300 ripple-button text-sm md:text-base">
                             Send Message
                         </button>
                         
                         <div class="spinner mt-4 mx-auto"></div>
                         
                         <div id="form-success" class="hidden p-4 bg-emerald-900/30 text-emerald-300 rounded-lg text-center success-message">
-                            <i class="fas fa-check-circle text-2xl mb-2"></i>
-                            <p class="font-semibold">Thank you for your message!</p>
-                            <p class="text-sm mt-2">I'll get back to you as soon as possible.</p>
-                            <button type="button" class="mt-4 px-4 py-2 glass-card rounded-lg text-sm font-semibold hover:glow transition-all duration-300" onclick="document.getElementById('form-success').classList.add('hidden');">
+                            <i class="fas fa-check-circle text-xl md:text-2xl mb-2"></i>
+                            <p class="font-semibold text-sm md:text-base">Thank you for your message!</p>
+                            <p class="text-xs md:text-sm mt-2">I'll get back to you as soon as possible.</p>
+                            <button type="button" class="mt-4 px-4 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold hover:glow transition-all duration-300" onclick="document.getElementById('form-success').classList.add('hidden');">
                                 Back to Form
                             </button>
                         </div>
@@ -809,20 +889,20 @@
     </section>
     
     <!-- Footer -->
-    <footer class="py-12 px-6 text-center relative overflow-hidden">
+    <footer class="py-10 md:py-12 px-6 text-center relative overflow-hidden">
         <div class="container mx-auto">
-            <div class="text-gray-400 mb-4">© 2025 Riek Gatluak Geka. All rights reserved.</div>
+            <div class="text-gray-400 text-sm md:text-base mb-4">© 2025 Riek Gatluak Geka. All rights reserved.</div>
             <div class="flex justify-center space-x-6">
-                <a href="mailto:riekgatluak25@gmail.com" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
+                <a href="mailto:riekgatluak25@gmail.com" class="text-xl hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://wa.me/211981211736" target="_blank" class="text-gray-400 hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
+                <a href="https://wa.me/211981211736" target="_blank" class="text-xl hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-gray-400 hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-xl hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/riek27" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
+                <a href="https://github.com/riek27" target="_blank" class="text-xl hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
