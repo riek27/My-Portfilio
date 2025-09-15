@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riek Gatluak Geka | Full-Stack Engineer & Startup Founder</title>
-    <meta name="description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development. Building scalable, high-performance applications.">
-    <meta name="keywords" content="Full-Stack Developer, AI/ML Engineer, Blockchain Developer, Startup Founder, Frontend Engineer, Backend Developer">
+    <title>Riek Gatluak Geka | Frontend Engineer & Startup Founder</title>
+    <meta name="description" content="Frontend Engineer specializing in modern UIs with strong backend integration skills. Building scalable, high-performance applications with sleek designs.">
+    <meta name="keywords" content="Frontend Engineer, React Developer, UI/UX Designer, Startup Founder, JavaScript Developer">
     <meta name="author" content="Riek Gatluak Geka">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://riek27.github.io/">
-    <meta property="og:title" content="Riek Gatluak Geka | Full-Stack Engineer & Startup Founder">
-    <meta property="og:description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development.">
+    <meta property="og:title" content="Riek Gatluak Geka | Frontend Engineer & Startup Founder">
+    <meta property="og:description" content="Frontend Engineer specializing in modern UIs with strong backend integration skills.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://riek27.github.io/">
-    <meta property="twitter:title" content="Riek Gatluak Geka | Full-Stack Engineer & Startup Founder">
-    <meta property="twitter:description" content="Versatile engineer specializing in Frontend, Backend, AI/ML Infrastructure, Blockchain, and Startup Development.">
+    <meta property="twitter:title" content="Riek Gatluak Geka | Frontend Engineer & Startup Founder">
+    <meta property="twitter:description" content="Frontend Engineer specializing in modern UIs with strong backend integration skills.">
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,6 +39,7 @@
                         'float-slow': 'float 6s ease-in-out infinite',
                         'float-medium': 'float 5s ease-in-out infinite',
                         'float-fast': 'float 4s ease-in-out infinite',
+                        'pulse-soft': 'pulse 3s ease-in-out infinite',
                     },
                     keyframes: {
                         float: {
@@ -102,6 +103,12 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         .glow {
@@ -131,7 +138,7 @@
         }
         
         .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px) scale(1.02) rotateX(5deg);
             box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
         }
         
@@ -185,6 +192,7 @@
         .nav-scroll {
             background: rgba(15, 23, 42, 0.95);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .lazy-load {
@@ -245,6 +253,7 @@
             z-index: 1001;
             display: none;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
         }
         
         .color-picker {
@@ -290,9 +299,32 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 1001;
+            backdrop-filter: blur(10px);
         }
         
         .info-icon:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .skill-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-icon:hover .skill-tooltip {
             opacity: 1;
             visibility: visible;
         }
@@ -364,10 +396,10 @@
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6">Riek Gatluak <span class="gradient-text">Geka</span></h1>
                 <div class="typewriter text-xl md:text-2xl text-gray-300 mb-8">
-                    Frontend Engineer | Full-Stack Developer | Startup Founder | Problem Solver
+                    Frontend Engineer | UI/UX Specialist | Startup Founder
                 </div>
                 <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                    I build scalable, high-performance apps and infrastructure — from sleek UIs to complex distributed systems.
+                    Specializing in sleek, modern UIs with strong fundamentals in backend integration. Building scalable, high-performance applications.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="#projects" class="px-8 py-4 gradient-bg rounded-full font-semibold glow hover:shadow-lg transition-all duration-300 transform hover:scale-105">
@@ -413,13 +445,13 @@
                 
                 <div class="w-full lg:w-2/3 glass-card p-8 md:p-12 rounded-2xl">
                     <p class="text-lg text-gray-300 mb-6">
-                        I'm a multi-disciplinary engineer with expertise spanning frontend, backend, AI/ML infrastructure, blockchain, and startup product development. 
+                        I'm a Frontend Engineer with expertise in creating modern, responsive user interfaces and strong fundamentals in backend integration. My passion lies in building scalable applications that bridge the gap between complex technology and user-friendly experiences.
                     </p>
                     <p class="text-lg text-gray-300 mb-6">
-                        As the founder of <span class="text-indigo-300 font-medium">CoreCompute</span> (decentralized AI compute platform) and <span class="text-cyan-300 font-medium">Blocentra</span> (Bitcoin infrastructure), I've led the development of cutting-edge solutions that solve real-world problems.
+                        As the founder of <span class="text-indigo-300 font-medium">CoreCompute</span> (decentralized AI compute platform) and <span class="text-cyan-300 font-medium">Blocentra</span> (Bitcoin infrastructure), I've led the development of cutting-edge solutions with a focus on sleek UI/UX design and seamless user experiences.
                     </p>
                     <p class="text-lg text-gray-300">
-                        My passion lies in building scalable systems that bridge the gap between complex technology and user-friendly experiences. I thrive in challenging environments where I can leverage my full-stack expertise to deliver impactful solutions.
+                        I thrive in challenging environments where I can leverage my frontend expertise to deliver impactful solutions. My background in startup development gives me a unique perspective on building products that users love.
                     </p>
                     
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -436,8 +468,8 @@
                             <div class="text-sm text-gray-400">Startups</div>
                         </div>
                         <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <div class="text-3xl font-bold gradient-text">4</div>
-                            <div class="text-sm text-gray-400">Domains</div>
+                            <div class="text-3xl font-bold gradient-text">100%</div>
+                            <div class="text-sm text-gray-400">UI Focus</div>
                         </div>
                     </div>
                 </div>
@@ -457,11 +489,11 @@
                         <img src="assets/corecompute.jpg" alt="CoreCompute" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                     <h3 class="text-2xl font-bold mb-2">CoreCompute</h3>
-                    <p class="text-gray-400 mb-4">Decentralized AI compute network leveraging idle GPUs to reduce AI training costs by up to 40%.</p>
+                    <p class="text-gray-400 mb-4">Designed and implemented the frontend for a decentralized AI compute network with modern React UI, animations, and seamless user experience.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Blockchain</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">TailwindCSS</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Animations</span>
                         <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm">Web3</span>
                     </div>
                     <div class="flex justify-between">
@@ -476,11 +508,11 @@
                         <img src="assets/blocentr.jpg" alt="Blocentra" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Blocentra</h3>
-                    <p class="text-gray-400 mb-4">Bitcoin infrastructure platform providing blockchain tools and services for the crypto economy.</p>
+                    <p class="text-gray-400 mb-4">Created a responsive Bitcoin infrastructure platform with modern UI components, data visualization, and integrated backend APIs for functionality.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">React</span>
                         <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">TailwindCSS</span>
-                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">Bitcoin</span>
+                        <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">Data Viz</span>
                         <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">APIs</span>
                     </div>
                     <div class="flex justify-between">
@@ -495,12 +527,12 @@
                         <img src="assets/sensor.jpg" alt="AI Predictive Maintenance" class="w-full h-full object-cover lazy-load" loading="lazy">
                     </div>
                     <h3 class="text-2xl font-bold mb-2">AI Predictive Maintenance</h3>
-                    <p class="text-gray-400 mb-4">Predictive infrastructure maintenance powered by AI, analyzing sensor data to prevent failures.</p>
+                    <p class="text-gray-400 mb-4">Built an interactive dashboard with complex data visualization components for predictive infrastructure maintenance powered by AI.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">AI/ML</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">IoT</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">D3.js</span>
                         <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Data Viz</span>
-                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm">UI/UX</span>
                     </div>
                     <div class="flex justify-between">
                         <a href="https://riek27.github.io/Ai-predictive/" target="_blank" class="px-4 py-2 gradient-bg rounded-lg text-sm font-semibold glow">Live Demo</a>
@@ -559,11 +591,11 @@
                 
                 <!-- Backend -->
                 <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-cyan-300">Backend & APIs</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-300">Backend Integration</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>Node.js/Express</span>
+                                <span>API Integration</span>
                                 <span>88%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
@@ -591,35 +623,35 @@
                     </div>
                 </div>
                 
-                <!-- Infrastructure -->
+                <!-- UI/UX -->
                 <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 text-emerald-300">Infrastructure & DevOps</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-emerald-300">UI/UX Design</h3>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>AWS Cloud</span>
-                                <span>80%</span>
+                                <span>User Experience</span>
+                                <span>90%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 80%"></div>
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>Docker</span>
-                                <span>78%</span>
+                                <span>Responsive Design</span>
+                                <span>93%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 78%"></div>
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 93%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span>CI/CD Pipelines</span>
-                                <span>75%</span>
+                                <span>Prototyping</span>
+                                <span>85%</span>
                             </div>
                             <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 75%"></div>
+                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
                             </div>
                         </div>
                     </div>
@@ -629,21 +661,25 @@
                 <div class="glass-card p-8 rounded-2xl">
                     <h3 class="text-2xl font-bold mb-6 text-purple-300">Specializations</h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <i class="fas fa-brain text-3xl mb-2 text-indigo-400"></i>
-                            <div>AI/ML Infrastructure</div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
+                            <i class="fas fa-paint-brush text-3xl mb-2 text-indigo-400"></i>
+                            <div>UI Design</div>
+                            <div class="skill-tooltip">Creating visually appealing and intuitive user interfaces</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <i class="fas fa-link text-3xl mb-2 text-cyan-400"></i>
-                            <div>Blockchain</div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
+                            <i class="fas fa-mobile-alt text-3xl mb-2 text-cyan-400"></i>
+                            <div>Responsive Design</div>
+                            <div class="skill-tooltip">Building applications that work seamlessly across all devices</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
-                            <i class="fas fa-network-wired text-3xl mb-2 text-emerald-400"></i>
-                            <div>Distributed Systems</div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
+                            <i class="fas fa-bolt text-3xl mb-2 text-emerald-400"></i>
+                            <div>Performance</div>
+                            <div class="skill-tooltip">Optimizing applications for speed and efficiency</div>
                         </div>
-                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                        <div class="text-center p-4 bg-slate-800 rounded-lg relative skill-icon">
                             <i class="fas fa-rocket text-3xl mb-2 text-purple-400"></i>
                             <div>Startup Development</div>
+                            <div class="skill-tooltip">Building products from concept to deployment</div>
                         </div>
                     </div>
                 </div>
@@ -658,8 +694,8 @@
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="w-full lg:w-1/2 glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6">Open to frontend, full-stack, and infrastructure roles — ready to contribute from day one.</h3>
-                    <p class="text-gray-400 mb-8">I'm currently exploring new opportunities where I can apply my multidisciplinary expertise to build innovative solutions. Let's connect!</p>
+                    <h3 class="text-2xl font-bold mb-6">Open to frontend engineering roles — ready to create amazing user experiences from day one.</h3>
+                    <p class="text-gray-400 mb-8">I'm currently exploring new opportunities where I can apply my frontend expertise to build innovative solutions with sleek, modern UIs. Let's connect!</p>
                     
                     <div class="space-y-6">
                         <div class="flex items-center">
