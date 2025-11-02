@@ -3,1214 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riek Gatluak Geka | Frontend Engineer</title>
-    <meta name="description" content="Premium Frontend Engineer specializing in modern UIs with strong backend integration skills. Building scalable, high-performance applications with sleek designs.">
-    <meta name="keywords" content="Frontend Engineer, React Developer, UI/UX Designer, Startup Founder, JavaScript Developer">
-    <meta name="author" content="Riek Gatluak Geka">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://riek27.github.io/">
-    <meta property="og:title" content="Riek Gatluak Geka | Premium Frontend Engineer">
-    <meta property="og:description" content="Premium Frontend Engineer specializing in modern UIs with strong backend integration skills.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://riek27.github.io/">
-    <meta property="twitter:title" content="Riek Gatluak Geka | Premium Frontend Engineer">
-    <meta property="twitter:description" content="Premium Frontend Engineer specializing in modern UIs with strong backend integration skills.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0f172a',
-                        light: '#f8fafc',
-                        primary: '#6366f1',
-                        'primary-dark': '#4f46e5',
-                        secondary: '#06b6d4',
-                        accent: '#10b981',
-                    },
-                    animation: {
-                        'float-slow': 'float 6s ease-in-out infinite',
-                        'float-medium': 'float 5s ease-in-out infinite',
-                        'float-fast': 'float 4s ease-in-out infinite',
-                        'pulse-soft': 'pulse 3s ease-in-out infinite',
-                        'bounce-soft': 'bounce 2s infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        }
-                    },
-                    screens: {
-                        'xs': '475px',
-                        '3xl': '1920px',
-                        '4xl': '2560px',
-                    }
-                }
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>IM STORE - Technology that Connects You to the Future</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #06b6d4;
-            --accent: #10b981;
-            --dark: '#0f172a';
-            --light: '#f8fafc';
-            --gradient: linear-gradient(135deg, #6366f1, #06b6d4, #10b981);
-            --theme-name: 'default';
-        }
-        
-        :root[data-theme="purple"] {
-            --primary: #8b5cf6;
-            --primary-dark: #7c3aed;
-            --secondary: #a855f7;
-            --accent: #d946ef;
-            --gradient: linear-gradient(135deg, #8b5cf6, #a855f7, #d946ef);
-            --theme-name: 'purple';
-        }
-        
-        :root[data-theme="teal"] {
-            --primary: #0d9488;
-            --primary-dark: #0f766e;
-            --secondary: #14b8a6;
-            --accent: #2dd4bf;
-            --gradient: linear-gradient(135deg, #0d9488, #14b8a6, #2dd4bf);
-            --theme-name: 'teal';
-        }
-        
-        :root[data-theme="gold"] {
-            --primary: #d97706;
-            --primary-dark: #b45309;
-            --secondary: #f59e0b;
-            --accent: #fbbf24;
-            --gradient: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24);
-            --theme-name: 'gold';
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            line-height: 1.6;
-            transition: background-color 0.5s ease;
-        }
-        
-        .gradient-text {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .gradient-bg {
-            background: var(--gradient);
-        }
-        
-        .glass-card {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .glow {
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-        }
-        
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.2;
-            filter: blur(40px);
-            z-index: -1;
-        }
-        
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-        
-        .project-card {
-            transition: all 0.3s ease;
-            transform-style: preserve-3d;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02) rotateX(5deg);
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
-        }
-        
-        .skill-bar {
-            transition: width 2s ease;
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid var(--primary);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary) }
-        }
-        
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top: 4px solid #fff;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            display: none;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .nav-scroll {
-            background: rgba(15, 23, 42, 0.95);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .lazy-load.loaded {
-            opacity: 1;
-        }
-        
-        /* Theme Switcher */
-        .theme-switcher {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .theme-button {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            animation: bounce-soft 2s infinite;
-        }
-        
-        .theme-button:hover {
-            transform: scale(1.1);
-        }
-        
-        .theme-panel {
-            position: absolute;
-            top: 0;
-            right: 60px;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-            display: none;
-            width: 150px;
-        }
-        
-        .theme-option {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin: 8px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .theme-option:hover {
-            transform: scale(1.2);
-        }
-        
-        .theme-option.default {
-            background: linear-gradient(135deg, #6366f1, #06b6d4, #10b981);
-        }
-        
-        .theme-option.purple {
-            background: linear-gradient(135deg, #8b5cf6, #a855f7, #d946ef);
-        }
-        
-        .theme-option.teal {
-            background: linear-gradient(135deg, #0d9488, #14b8a6, #2dd4bf);
-        }
-        
-        .theme-option.gold {
-            background: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24);
-        }
-        
-        /* Ripple effect for buttons */
-        .ripple-button {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .ripple-button span {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.7);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-        }
-        
-        @keyframes ripple {
-            to {
-                transform: scale(2.5);
-                opacity: 0;
-            }
-        }
-        
-        /* Skill tooltips */
-        .skill-tooltip {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(15, 23, 42, 0.95);
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .skill-icon:hover .skill-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Success message animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .success-message {
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        /* Responsive Typography */
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-        }
-
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-        }
-
-        .section-padding {
-            padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 3rem);
-        }
-
-        /* Responsive adjustments for mobile */
-        @media (max-width: 768px) {
-            .theme-switcher {
-                top: 80px;
-                right: 15px;
-            }
-            
-            .theme-button {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .shape {
-                display: none;
-            }
-            
-            .glass-card {
-                border-radius: 12px;
-            }
-            
-            .project-card:hover {
-                transform: none;
-            }
-            
-            .typewriter {
-                white-space: normal;
-                border-right: none;
-                animation: none;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .theme-switcher {
-                display: none;
-            }
-        }
-
-        @media (min-width: 1920px) {
-            .container {
-                max-width: 1600px;
-            }
-        }
-
-        @media (min-width: 2560px) {
-            .container {
-                max-width: 2000px;
-            }
-            
-            html {
-                font-size: 18px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased">
-    <!-- Theme Switcher -->
-    <div class="theme-switcher">
-        <div class="theme-button" id="theme-toggle">
-            <i class="fas fa-palette text-white"></i>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">IM <span>STORE</span></a>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="theme-panel glass-card" id="theme-panel">
-            <div class="theme-option default" data-theme="default" title="Default Theme"></div>
-            <div class="theme-option purple" data-theme="purple" title="Purple Theme"></div>
-            <div class="theme-option teal" data-theme="teal" title="Teal Theme"></div>
-            <div class="theme-option gold" data-theme="gold" title="Gold Theme"></div>
-        </div>
-    </div>
-    
-    <!-- Particle Background Canvas -->
-    <canvas id="particle-canvas"></canvas>
-    
-    <!-- Floating Shapes -->
-    <div class="shape w-80 h-80 gradient-bg top-20 -left-40 animate-float-slow"></div>
-    <div class="shape w-96 h-96 bg-cyan-500 top-1/2 -right-48 animate-float-medium"></div>
-    <div class="shape w-64 h-64 bg-emerald-500 bottom-40 left-1/4 animate-float-fast"></div>
-    
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 py-4 px-4 md:px-8 lg:px-12 glass-card" style="top: 8px;">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-xl sm:text-2xl font-bold gradient-text">Riek Gatluak</a>
-            <div class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="#about" class="hover:text-indigo-300 transition-colors duration-300">About</a>
-                <a href="#projects" class="hover:text-indigo-300 transition-colors duration-300">Projects</a>
-                <a href="#skills" class="hover:text-indigo-300 transition-colors duration-300">Skills</a>
-                <a href="#contact" class="hover:text-indigo-300 transition-colors duration-300">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden glass-card mt-4 p-4 rounded-lg">
-            <div class="flex flex-col space-y-3">
-                <a href="#about" class="hover:text-indigo-300 transition-colors duration-300 py-2">About</a>
-                <a href="#projects" class="hover:text-indigo-300 transition-colors duration-300 py-2">Projects</a>
-                <a href="#skills" class="hover:text-indigo-300 transition-colors duration-300 py-2">Skills</a>
-                <a href="#contact" class="hover:text-indigo-300 transition-colors duration-300 py-2">Contact</a>
-            </div>
-        </div>
-    </nav>
-    
+    </header>
+
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-16 pb-20 px-4 md:px-8 lg:px-12 section-padding" style="padding-top: 80px;">
-        <div class="container mx-auto">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="font-bold mb-4 md:mb-6">Riek Gatluak <span class="gradient-text">Geka</span></h1>
-                <div class="typewriter hero-subtitle text-gray-300 mb-6 md:mb-8">
-                    Frontend Engineer | UI/UX Specialist | Startup Founder
-                </div>
-                <p class="text-base md:text-lg text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto">
-                    Specializing in sleek, modern UIs with strong fundamentals in backend integration. Building scalable, high-performance applications with exceptional user experiences.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-                    <a href="#projects" class="px-6 py-3 sm:px-8 sm:py-4 gradient-bg rounded-full font-semibold glow hover:shadow-lg transition-all duration-300 transform hover:scale-105 ripple-button text-sm sm:text-base">
-                        🚀 View Projects
-                    </a>
-                    <a href="assets/riekgatluakcvresume.pdf" download class="px-6 py-3 sm:px-8 sm:py-4 glass-card rounded-full font-semibold hover:glow transition-all duration-300 transform hover:scale-105 ripple-button text-sm sm:text-base">
-                        📄 Download Resume
-                    </a>
-                </div>
-            </div>
-            
-            <div class="flex justify-center space-x-6 mt-12 md:mt-16">
-                <a href="mailto:riekgatluak25@gmail.com" class="text-xl hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://wa.me/211981211736" target="_blank" class="text-xl hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-xl hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/riek27" target="_blank" class="text-xl hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Empowering Connectivity Across South Sudan</h1>
+            <p>Explore Starlink, Mikrotik, Ruijie, and more — only at IM STORE.</p>
+            <div class="hero-buttons">
+                <a href="#featured-products" class="btn btn-gold">Shop Now</a>
+                <a href="https://wa.me/211921390590" class="btn btn-outline" target="_blank">Order via WhatsApp</a>
             </div>
         </div>
     </section>
-    
-    <!-- About Section -->
-    <section id="about" class="section-padding">
-        <div class="container mx-auto">
-            <h2 class="text-center mb-12 md:mb-16 gradient-text">About Me</h2>
-            
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-                <div class="w-full lg:w-2/5 flex justify-center">
-                    <div class="relative">
-                        <div class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden glow animate-float-slow">
-                            <img src="assets/riekgatluak.jpg" alt="Riek Gatluak Geka" class="w-full h-full object-cover lazy-load" id="profile-img">
-                        </div>
-                        <div class="absolute -inset-3 sm:-inset-4 border-4 border-transparent rounded-full gradient-bg -z-10 animate-float-medium" style="animation-delay: 1s;"></div>
+
+    <!-- Featured Products -->
+    <section id="featured-products" class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Discover our premium selection of cutting-edge technology solutions</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Starlink Gen 3</h3>
+                        <p>High-speed satellite internet for remote locations with easy setup and reliable connectivity.</p>
+                        <div class="product-price">$599</div>
+                        <a href="https://wa.me/211921390590?text=Hi,%20I'm%20interested%20in%20Starlink%20Gen%203" class="btn" target="_blank">Order via WhatsApp</a>
                     </div>
                 </div>
-                
-                <div class="w-full lg:w-3/5 glass-card p-6 md:p-8 lg:p-10 xl:p-12 rounded-2xl">
-                    <p class="text-base md:text-lg text-gray-300 mb-4 md:mb-6">
-                        I'm a Frontend Engineer with expertise in creating modern, responsive user interfaces and strong fundamentals in backend integration. My passion lies in building scalable applications that bridge the gap between complex technology and exceptional user experiences.
-                    </p>
-                    <p class="text-base md:text-lg text-gray-300 mb-4 md:mb-6">
-                        As the founder of <span class="text-indigo-300 font-medium">CoreCompute</span> (decentralized AI compute platform) and <span class="text-cyan-300 font-medium">Blocentra</span> (Bitcoin infrastructure), I've led the development of cutting-edge solutions with a focus on sleek UI/UX design and seamless user experiences.
-                    </p>
-                    <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
-                        I thrive in challenging environments where I can leverage my frontend expertise to deliver impactful solutions. My background in startup development gives me a unique perspective on building products that users love.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
-                            <div class="text-2xl md:text-3xl font-bold gradient-text">1+</div>
-                            <div class="text-xs md:text-sm text-gray-400">Years Experience</div>
-                        </div>
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
-                            <div class="text-2xl md:text-3xl font-bold gradient-text">15+</div>
-                            <div class="text-xs md:text-sm text-gray-400">Projects</div>
-                        </div>
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
-                            <div class="text-2xl md:text-3xl font-bold gradient-text">2</div>
-                            <div class="text-xs md:text-sm text-gray-400">Startups</div>
-                        </div>
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg">
-                            <div class="text-2xl md:text-3xl font-bold gradient-text">100%</div>
-                            <div class="text-xs md:text-sm text-gray-400">UI Focus</div>
-                        </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1591789375117-42f7d902a2a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Starlink Gen 4 Mini</h3>
+                        <p>Compact satellite internet solution perfect for travelers and small businesses.</p>
+                        <div class="product-price">$399</div>
+                        <a href="https://wa.me/211921390590?text=Hi,%20I'm%20interested%20in%20Starlink%20Gen%204%20Mini" class="btn" target="_blank">Order via WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1626743995553-80e9436df7c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Mikrotik Router</h3>
+                        <p>Professional networking equipment for stable and secure internet connections.</p>
+                        <div class="product-price">$129</div>
+                        <a href="https://wa.me/211921390590?text=Hi,%20I'm%20interested%20in%20Mikrotik%20Router" class="btn" target="_blank">Order via WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572021335469-31706a17aaef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Water Dispenser</h3>
+                        <p>Modern water dispensing solutions with hot and cold options for offices and homes.</p>
+                        <div class="product-price">$249</div>
+                        <a href="https://wa.me/211921390590?text=Hi,%20I'm%20interested%20in%20Water%20Dispenser" class="btn" target="_blank">Order via WhatsApp</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 md:py-20 px-4 md:px-8 lg:px-12 bg-slate-900/50">
-        <div class="container mx-auto">
-            <h2 class="text-center mb-12 md:mb-16 gradient-text">Featured Projects</h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- CoreCompute -->
-                <div class="project-card glass-card p-5 md:p-6 rounded-2xl">
-                    <div class="mb-5 md:mb-6 h-40 sm:h-48 overflow-hidden rounded-xl relative">
-                        <img src="assets/corecompute.jpg" alt="CoreCompute" class="w-full h-full object-cover lazy-load" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                            <span class="px-3 py-1 bg-indigo-500/80 text-white rounded-full text-xs md:text-sm">Cloud Infrastructure</span>
-                        </div>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-2">CoreCompute</h3>
-                    <p class="text-gray-400 text-sm md:text-base mb-4">Designed and implemented the frontend for a decentralized AI compute network with modern React UI, animations, and seamless user experience.</p>
-                    <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
-                        <span class="px-2 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-xs md:text-sm">React</span>
-                        <span class="px-2 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-xs md:text-sm">TailwindCSS</span>
-                        <span class="px-2 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-xs md:text-sm">Animations</span>
-                    </div>
-                    <div class="flex justify-between gap-2">
-                        <a href="https://riek27.github.io/CoreCompute/" target="_blank" class="px-3 py-2 gradient-bg rounded-lg text-xs md:text-sm font-semibold glow ripple-button flex-1 text-center">Live Demo</a>
-                        <a href="https://github.com/riek27/CoreCompute" target="_blank" class="px-3 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold ripple-button flex-1 text-center">GitHub</a>
-                    </div>
-                </div>
-                
-                <!-- Blocentra -->
-                <div class="project-card glass-card p-5 md:p-6 rounded-2xl">
-                    <div class="mb-5 md:mb-6 h-40 sm:h-48 overflow-hidden rounded-xl relative">
-                        <img src="assets/blocentr.jpg" alt="Blocentra" class="w-full h-full object-cover lazy-load" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                            <span class="px-3 py-1 bg-cyan-500/80 text-white rounded-full text-xs md:text-sm">Blockchain</span>
-                        </div>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-2">Blocentra</h3>
-                    <p class="text-gray-400 text-sm md:text-base mb-4">Created a responsive Bitcoin infrastructure platform with modern UI components, data visualization, and integrated backend APIs for functionality.</p>
-                    <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
-                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">React</span>
-                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">TailwindCSS</span>
-                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">Data Viz</span>
-                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-xs md:text-sm">APIs</span>
-                    </div>
-                    <div class="flex justify-between gap-2">
-                        <a href="https://riek27.github.io/blocentraAI/" target="_blank" class="px-3 py-2 gradient-bg rounded-lg text-xs md:text-sm font-semibold glow ripple-button flex-1 text-center">Live Demo</a>
-                        <a href="https://github.com/riek27/blocentraAI" target="_blank" class="px-3 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold ripple-button flex-1 text-center">GitHub</a>
-                    </div>
-                </div>
-                
-                <!-- AI Predictive Maintenance -->
-                <div class="project-card glass-card p-5 md:p-6 rounded-2xl">
-                    <div class="mb-5 md:mb-6 h-40 sm:h-48 overflow-hidden rounded-xl relative">
-                        <img src="assets/sensor.jpg" alt="AI Predictive Maintenance" class="w-full h-full object-cover lazy-load" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                            <span class="px-3 py-1 bg-emerald-500/80 text-white rounded-full text-xs md:text-sm">AI/IoT</span>
-                        </div>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-2">AI Predictive Maintenance</h3>
-                    <p class="text-gray-400 text-sm md:text-base mb-4">Built an interactive dashboard with complex data visualization components for predictive infrastructure maintenance powered by AI.</p>
-                    <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
-                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">React</span>
-                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">D3.js</span>
-                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">Data Viz</span>
-                        <span class="px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-xs md:text-sm">UI/UX</span>
-                    </div>
-                    <div class="flex justify-between gap-2">
-                        <a href="https://riek27.github.io/Ai-predictive/" target="_blank" class="px-3 py-2 gradient-bg rounded-lg text-xs md:text-sm font-semibold glow ripple-button flex-1 text-center">Live Demo</a>
-                        <a href="https://github.com/riek27/Ai-predictive" target="_blank" class="px-3 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold ripple-button flex-1 text-center">GitHub</a>
-                    </div>
-                </div>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose IM STORE</h2>
+                <p>We are committed to delivering exceptional service and cutting-edge technology solutions</p>
             </div>
-            
-            <div class="text-center mt-10 md:mt-12">
-                <a href="https://github.com/riek27" target="_blank" class="px-6 py-3 glass-card rounded-full font-semibold inline-flex items-center hover:glow transition-all duration-300 ripple-button text-sm md:text-base">
-                    View More on GitHub <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Fast Delivery</h3>
+                    <p>We ensure quick and reliable delivery across South Sudan, so you get your products when you need them.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Genuine Products</h3>
+                    <p>All our products are authentic and come with manufacturer warranties for your peace of mind.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>24/7 Support</h3>
+                    <p>Our technical support team is available around the clock to assist with any issues or questions.</p>
+                </div>
             </div>
         </div>
     </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="section-padding">
-        <div class="container mx-auto">
-            <h2 class="text-center mb-12 md:mb-16 gradient-text">Technical Expertise</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
-                <!-- Frontend -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl">
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-indigo-300">Frontend Development</h3>
-                    <div class="space-y-4">
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from satisfied customers across South Sudan</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "IM STORE provided us with a reliable Starlink connection that transformed our business operations in a remote area. Their service is exceptional!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
                         <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">HTML/CSS/JS</span>
-                                <span class="text-sm md:text-base">95%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">React</span>
-                                <span class="text-sm md:text-base">90%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">TailwindCSS</span>
-                                <span class="text-sm md:text-base">92%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="width: 92%"></div>
-                            </div>
+                            <h4>James Deng</h4>
+                            <p>Business Owner, Juba</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Backend -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl">
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-cyan-300">Backend Integration</h3>
-                    <div class="space-y-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The Mikrotik routers we purchased have significantly improved our network stability. IM STORE's technical support is top-notch and always available."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SA</div>
                         <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">API Integration</span>
-                                <span class="text-sm md:text-base">88%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">REST/GraphQL APIs</span>
-                                <span class="text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">Database Design</span>
-                                <span class="text-sm md:text-base">82%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 82%"></div>
-                            </div>
+                            <h4>Sarah Akech</h4>
+                            <p>IT Manager, Wau</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- UI/UX -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl">
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-emerald-300">UI/UX Design</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">User Experience</span>
-                                <span class="text-sm md:text-base">90%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">Responsive Design</span>
-                                <span class="text-sm md:text-base">93%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 93%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm md:text-base">Prototyping</span>
-                                <span class="text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-700 rounded-full h-2.5">
-                                <div class="bg-emerald-500 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Fast delivery and genuine products! I appreciate how IM STORE makes advanced technology accessible here in South Sudan."
                     </div>
-                </div>
-                
-                <!-- Specialties -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl">
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-purple-300">Specializations</h3>
-                    <div class="grid grid-cols-2 gap-3 md:gap-4">
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-paint-brush text-2xl md:text-3xl mb-2 text-indigo-400"></i>
-                            <div class="text-sm md:text-base">UI Design</div>
-                            <div class="skill-tooltip">Creating visually appealing and intuitive user interfaces</div>
-                        </div>
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-mobile-alt text-2xl md:text-3xl mb-2 text-cyan-400"></i>
-                            <div class="text-sm md:text-base">Responsive Design</div>
-                            <div class="skill-tooltip">Building applications that work seamlessly across all devices</div>
-                        </div>
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-bolt text-2xl md:text-3xl mb-2 text-emerald-400"></i>
-                            <div class="text-sm md:text-base">Performance</div>
-                            <div class="skill-tooltip">Optimizing applications for speed and efficiency</div>
-                        </div>
-                        <div class="text-center p-3 md:p-4 bg-slate-800 rounded-lg relative skill-icon">
-                            <i class="fas fa-rocket text-2xl md:text-3xl mb-2 text-purple-400"></i>
-                            <div class="text-sm md:text-base">Startup Development</div>
-                            <div class="skill-tooltip">Building products from concept to deployment</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div>
+                            <h4>Peter Malou</h4>
+                            <p>Entrepreneur, Malakal</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-20 px-4 md:px-8 lg:px-12 bg-slate-900/50">
-        <div class="container mx-auto">
-            <h2 class="text-center mb-12 md:mb-16 gradient-text">Get In Touch</h2>
-            
-            <div class="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-12">
-                <div class="w-full lg:w-1/2 glass-card p-6 md:p-8 rounded-2xl">
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Open to frontend engineering roles — ready to create amazing user experiences from day one.</h3>
-                    <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8">I'm currently exploring new opportunities where I can apply my frontend expertise to build innovative solutions with sleek, modern UIs. Let's connect!</p>
-                    
-                    <div class="space-y-5 md:space-y-6">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
-                                <i class="fas fa-envelope text-sm md:text-base"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-sm md:text-base">Email</div>
-                                <a href="mailto:riekgatluak25@gmail.com" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300 text-sm md:text-base">riekgatluak25@gmail.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
-                                <i class="fab fa-whatsapp text-sm md:text-base"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-sm md:text-base">WhatsApp</div>
-                                <a href="https://wa.me/211981211736" target="_blank" class="text-gray-400 hover:text-green-300 transition-colors duration-300 text-sm md:text-base">+211 981 211 736</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
-                                <i class="fab fa-linkedin-in text-sm md:text-base"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-sm md:text-base">LinkedIn</div>
-                                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-gray-400 hover:text-blue-300 transition-colors duration-300 text-sm md:text-base">linkedin.com/in/riek-gatluak-geka</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
-                                <i class="fab fa-github text-sm md:text-base"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-sm md:text-base">GitHub</div>
-                                <a href="https://github.com/riek27" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors duration-300 text-sm md:text-base">github.com/riek27</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 md:w-12 md:h-12 gradient-bg rounded-full flex items-center justify-center mr-3 md:mr-4">
-                                <i class="fas fa-map-marker-alt text-sm md:text-base"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-sm md:text-base">Location</div>
-                                <div class="text-gray-400 text-sm md:text-base">Juba, South Sudan</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="w-full lg:w-1/2 glass-card p-6 md:p-8 rounded-2xl">
-                    <form id="contact-form" class="space-y-5 md:space-y-6">
-                        <div>
-                            <label for="name" class="block mb-2 font-medium text-sm md:text-base">Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300 text-sm md:text-base">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block mb-2 font-medium text-sm md:text-base">Email</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300 text-sm md:text-base">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block mb-2 font-medium text-sm md:text-base">Message</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors duration-300 text-sm md:text-base"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full px-5 py-3 md:px-6 md:py-4 gradient-bg rounded-lg font-semibold glow flex items-center justify-center hover:shadow-lg transition-all duration-300 ripple-button text-sm md:text-base">
-                            Send Message
-                        </button>
-                        
-                        <div class="spinner mt-4 mx-auto"></div>
-                        
-                        <div id="form-success" class="hidden p-4 bg-emerald-900/30 text-emerald-300 rounded-lg text-center success-message">
-                            <i class="fas fa-check-circle text-xl md:text-2xl mb-2"></i>
-                            <p class="font-semibold text-sm md:text-base">Thank you for your message!</p>
-                            <p class="text-xs md:text-sm mt-2">I'll get back to you as soon as possible.</p>
-                            <button type="button" class="mt-4 px-4 py-2 glass-card rounded-lg text-xs md:text-sm font-semibold hover:glow transition-all duration-300" onclick="document.getElementById('form-success').classList.add('hidden');">
-                                Back to Form
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Footer -->
-    <footer class="py-10 md:py-12 px-6 text-center relative overflow-hidden">
-        <div class="container mx-auto">
-            <div class="text-gray-400 text-sm md:text-base mb-4">© 2025 Riek Gatluak Geka. All rights reserved.</div>
-            <div class="flex justify-center space-x-6">
-                <a href="mailto:riekgatluak25@gmail.com" class="text-xl hover:text-indigo-300 transition-colors duration-300" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://wa.me/211981211736" target="_blank" class="text-xl hover:text-green-300 transition-colors duration-300" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/riek-gatluak-geka-reat-047b57304" target="_blank" class="text-xl hover:text-blue-300 transition-colors duration-300" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/riek27" target="_blank" class="text-xl hover:text-purple-300 transition-colors duration-300" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>IM STORE</h3>
+                    <p>Technology that Connects You to the Future. Providing cutting-edge internet and technology solutions across South Sudan.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li>📞 +211 921 390 590</li>
+                        <li>📧 imranpsg470@gmail.com</li>
+                        <li>📍 Konyo Konyo Market, Juba, South Sudan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IM STORE. All Rights Reserved. | Technology that Connects You to the Future</p>
             </div>
         </div>
     </footer>
-    
-    <script>
-        // Wait for DOM to fully load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Theme Switcher Functionality
-            function initThemeSwitcher() {
-                const themeToggle = document.getElementById('theme-toggle');
-                const themePanel = document.getElementById('theme-panel');
-                const themeOptions = document.querySelectorAll('.theme-option');
-                
-                // Load saved theme from localStorage
-                const savedTheme = localStorage.getItem('portfolioTheme') || 'default';
-                document.documentElement.setAttribute('data-theme', savedTheme);
-                
-                // Toggle theme panel
-                themeToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    themePanel.style.display = themePanel.style.display === 'block' ? 'none' : 'block';
-                });
-                
-                // Change theme
-                themeOptions.forEach(option => {
-                    option.addEventListener('click', function() {
-                        const theme = this.getAttribute('data-theme');
-                        document.documentElement.setAttribute('data-theme', theme);
-                        localStorage.setItem('portfolioTheme', theme);
-                        themePanel.style.display = 'none';
-                    });
-                });
-                
-                // Close theme panel when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!e.target.closest('.theme-switcher')) {
-                        themePanel.style.display = 'none';
-                    }
-                });
-            }
-            
-            // Initialize theme switcher
-            initThemeSwitcher();
-            
-            // Ripple effect for buttons
-            function initRippleEffect() {
-                const buttons = document.querySelectorAll('.ripple-button');
-                
-                buttons.forEach(button => {
-                    button.addEventListener('click', function(e) {
-                        const x = e.clientX - e.target.getBoundingClientRect().left;
-                        const y = e.clientY - e.target.getBoundingClientRect().top;
-                        
-                        const ripple = document.createElement('span');
-                        ripple.style.left = `${x}px`;
-                        ripple.style.top = `${y}px`;
-                        this.appendChild(ripple);
-                        
-                        setTimeout(() => {
-                            ripple.remove();
-                        }, 600);
-                    });
-                });
-            }
-            
-            // Initialize ripple effect
-            initRippleEffect();
-            
-            // Three.js Particle Background
-            function initParticles() {
-                const canvas = document.getElementById('particle-canvas');
-                if (!canvas) return;
-                
-                const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-                const renderer = new THREE.WebGLRenderer({ 
-                    canvas, 
-                    alpha: true,
-                    antialias: true 
-                });
-                
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                
-                // Create particles with improved performance
-                const particlesGeometry = new THREE.BufferGeometry();
-                const particlesCount = 1200; // Reduced for better performance
-                
-                const posArray = new Float32Array(particlesCount * 3);
-                const colorArray = new Float32Array(particlesCount * 3);
-                
-                for (let i = 0; i < particlesCount * 3; i++) {
-                    posArray[i] = (Math.random() - 0.5) * 10;
-                    colorArray[i] = Math.random();
-                }
-                
-                particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-                particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
-                
-                const particlesMaterial = new THREE.PointsMaterial({
-                    size: 0.05,
-                    vertexColors: true,
-                    transparent: true,
-                    opacity: 0.8
-                });
-                
-                const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-                scene.add(particlesMesh);
-                
-                camera.position.z = 5;
-                
-                // Mouse movement with dampening for smoother effect
-                let mouseX = 0;
-                let mouseY = 0;
-                let targetX = 0;
-                let targetY = 0;
-                
-                document.addEventListener('mousemove', (event) => {
-                    targetX = (event.clientX / window.innerWidth) * 2 - 1;
-                    targetY = -(event.clientY / window.innerHeight) * 2 + 1;
-                });
-                
-                // Animation with optimized rendering
-                let frameId;
-                function animate() {
-                    frameId = requestAnimationFrame(animate);
-                    
-                    particlesMesh.rotation.x += 0.0005;
-                    particlesMesh.rotation.y += 0.0005;
-                    
-                    // Smooth mouse movement with easing
-                    mouseX += (targetX * 2 - mouseX) * 0.05;
-                    mouseY += (targetY * 2 - mouseY) * 0.05;
-                    
-                    camera.position.x = mouseX;
-                    camera.position.y = mouseY;
-                    camera.lookAt(scene.position);
-                    
-                    renderer.render(scene, camera);
-                }
-                
-                animate();
-                
-                // Handle window resize with debounce
-                let resizeTimeout;
-                window.addEventListener('resize', () => {
-                    clearTimeout(resizeTimeout);
-                    resizeTimeout = setTimeout(() => {
-                        camera.aspect = window.innerWidth / window.innerHeight;
-                        camera.updateProjectionMatrix();
-                        renderer.setSize(window.innerWidth, window.innerHeight);
-                    }, 250);
-                });
-            }
-            
-            // Initialize particles if Three.js is available
-            if (typeof THREE !== 'undefined') {
-                initParticles();
-            }
-            
-            // Mobile menu toggle
-            document.getElementById('menu-toggle')?.addEventListener('click', function() {
-                document.getElementById('mobile-menu').classList.toggle('hidden');
-            });
-            
-            // Navbar scroll effect
-            let lastScrollY = window.scrollY;
-            const navbar = document.getElementById('navbar');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('nav-scroll');
-                } else {
-                    navbar.classList.remove('nav-scroll');
-                }
-                
-                lastScrollY = window.scrollY;
-            });
-            
-            // Animate on scroll with Intersection Observer
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.animate-on-scroll').forEach(element => {
-                observer.observe(element);
-            });
-            
-            // Skill bars animation
-            const skillBars = document.querySelectorAll('.skill-bar');
-            const skillsSection = document.getElementById('skills');
-            
-            if (skillsSection) {
-                const skillsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            skillBars.forEach(bar => {
-                                const width = bar.style.width;
-                                bar.style.width = '0';
-                                setTimeout(() => {
-                                    bar.style.width = width;
-                                }, 200);
-                            });
-                            skillsObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.3 });
-                
-                skillsObserver.observe(skillsSection);
-            }
-            
-            // Contact form submission
-            const contactForm = document.getElementById('contact-form');
-            const spinner = document.querySelector('.spinner');
-            const successMessage = document.getElementById('form-success');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(contactForm);
-                    const data = Object.fromEntries(formData);
-                    
-                    spinner.style.display = 'block';
-                    
-                    try {
-                        const response = await fetch('https://api.getform.io/v1/forms/arogxyjb?token=soaqOTdqKqVQqqyMZVJF4aLtu7if2GJUnXwX1lGgC73EPo3DclkrURwxBVcy', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(data)
-                        });
-                        
-                        if (response.ok) {
-                            contactForm.reset();
-                            successMessage.classList.remove('hidden');
-                        }
-                    } catch (error) {
-                        console.error('Error:', error);
-                    } finally {
-                        spinner.style.display = 'none';
-                    }
-                });
-            }
-            
-            // Lazy loading images with Intersection Observer
-            const lazyImages = document.querySelectorAll('.lazy-load');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.classList.add('loaded');
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                });
-                
-                lazyImages.forEach(img => imageObserver.observe(img));
-            } else {
-                // Fallback for browsers without Intersection Observer
-                lazyImages.forEach(img => img.classList.add('loaded'));
-            }
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        // Close mobile menu if open
-                        document.getElementById('mobile-menu').classList.add('hidden');
-                    }
-                });
-            });
-            
-            // Preload critical images
-            function preloadImage(url) {
-                const img = new Image();
-                img.src = url;
-            }
-            
-            // Preload hero image
-            preloadImage('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
-        });
-    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/211921390590" class="whatsapp-float" target="_blank">
+        <span>💬</span>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
